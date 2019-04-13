@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/chapter_00/chapter_00.iml" filepath="$PROJECT_DIR$/chapter_00/chapter_00.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_01/chapter_01.iml" filepath="$PROJECT_DIR$/chapter_01/chapter_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-leaning-project.iml" filepath="$PROJECT_DIR$/java-leaning-project.iml" />
     </modules>
   </component>
