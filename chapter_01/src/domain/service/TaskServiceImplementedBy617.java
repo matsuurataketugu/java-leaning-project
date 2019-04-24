@@ -29,9 +29,10 @@ public class TaskServiceImplementedBy617 implements ITask {
     @Override
     public void learnConstant() {
         final double TAX = 1.08;
-        final int price = 100;
-        final double cost = price * TAX ;
-        System.out.println("商品お買い上げありがとうございます。"+ cost +"円になります");
+              int price = 100;
+              double cost = price * TAX ;
+              int answer = (int)cost;
+        System.out.println("商品お買い上げありがとうございます。"+ answer +"円になります");
     }
 
 
