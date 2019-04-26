@@ -20,7 +20,7 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void learnVariable() {
         int x = 3 ;
         int y = 5 ;
-        int z = x*y;
+        int z = x * y;
         System.out.println("縦幅" + x + "横幅 "+ y +" の長方形の面積は、"+ z );
 
     }
@@ -29,25 +29,26 @@ public class TaskServiceImplementedBy645 implements ITask {
     @Override
     public void learnConstant() {
 
-        double TAX = 1.08;
-        int a = 100;
-        double b = a * TAX ;
-        System.out.println("商品お買い上げありがとうございます。"+ (int)b +"円になります");
+        double TAX = 0.08;
+        int price = 100;
+        double priceTax = price * TAX ;
+        int total = (int)priceTax + price;
+        System.out.println("商品お買い上げありがとうございます。"+ total+"円になります");
     }
 
     // 問４
     @Override
     public void learnDataType() {
-        boolean c = true;
-        char d = '侍';
-        double e = 3.14;
-        long f = 314159265853979L;
-        String g = "為せば成る 為さねば成らぬ 何事も 成らぬは人の 為さぬなりけり";
-        System.out.println(c);
-        System.out.println(d);
-        System.out.println(e);
-        System.out.println(f);
-        System.out.println(g);
+        boolean flg = true;
+        char moji = '侍';
+        double syosu = 3.14;
+        long suuretu = 314159265853979L;
+        String mojiretu = "為せば成る 為さねば成らぬ 何事も 成らぬは人の 為さぬなりけり";
+        System.out.println(flg);
+        System.out.println(moji);
+        System.out.println(syosu);
+        System.out.println(suuretu);
+        System.out.println(mojiretu);
 
 
     }
