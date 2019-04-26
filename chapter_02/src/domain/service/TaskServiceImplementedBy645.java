@@ -38,6 +38,10 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void fortuneGame() {
         import java.util.Scanner;
         import java.util.Random;
+
+        int nenrei = 0 ;
+        String name = null;
+        int random = 0 ;
         // 問３
         // 以下の内容のプログラムを作成せよ。
         // 1. 画面に「ようこそ占いの館へ」と表示
@@ -62,7 +66,7 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 9. 画面に「占いの結果が出ました！」と表示
         System.out.println("あなたの年齢を入力してください");
         // 10. 画面に「(年齢)歳の(名前)さん、あなたの運気番号は(乱数)です。」と表示 ※カッコの中身は変数
-        System.out.println("歳のさん、あなたの運気番号はです。");
+        System.out.println( nenrei +"歳の"+ name +"さん、あなたの運気番号"+ random +"はです。");
 
         // 11. 画面に「1:大吉 2:中吉 3:吉 4:凶」と表示
         System.out.println("1:大吉  2:中吉  3:吉  4:凶");
