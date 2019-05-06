@@ -7,9 +7,20 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 下記の条件式を記述せよ
         // 構文が正しければ良い
         // 画面に何かを出力する必要なし
+
         // 1. 変数weightの値が60に等しい
+        int weight == 60 ;
+
         // 2. 変数age1とage2の合計を2倍したものが60を超えている
+        int age1 = 20;
+        int age2 = 15;
+        int ageSUM  = age1 +  age2;
+        ageSUM * 2 < 60;
+
         // 3. 変数ageが奇数である
+        int age ;
+        age % 2 == 1 ;
+
         // 4. 変数jobの中身の文字列が「プログラマー」と等しい
 
     }
@@ -18,13 +29,12 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void learnIfSyntax2() {
         // 問２
         // 下記の中から条件式として正しいものを表示せよ
-        // A. cost = 300 * 1.08
+         cost = 300 * 1.08;
         // B. 3
-        // C. age != 30
+          age != 30;
         // D. true
-        // E. b + 5 < 20
-        // F. gender = true
-
+          b + 5 < 20;
+         gender = true;
     }
 
     @Override
@@ -32,6 +42,7 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 問３
         // 下記の内容に沿ったプログラムを作成せよ
         // 1. int型の変数sexを定義し、０か１を格納
+
         //    またint型変数ageを定義し、適当な数字を格納
         // 2. 画面に「こんにちは」と表示
         // 3. もし変数sexが0なら「私は男です」、そうでなければ「私は女です」と表示
