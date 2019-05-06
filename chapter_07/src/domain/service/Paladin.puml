@@ -3,8 +3,8 @@ class Paladin {
     +name
     +life
     +mana
-    MAX_LIFE
-    MAX_MANA
+    {static} MAX_LIFE
+    {static} MAX_MANA
     +zeal()
     +fanaticism()
     +meditation()
