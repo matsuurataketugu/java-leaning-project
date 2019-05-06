@@ -1,6 +1,6 @@
 package domain.service;
 
-
+import java.util.Random;
 import java.util.Scanner;
 
 public class TaskServiceImplementedBy645 implements ITask {
@@ -36,11 +36,9 @@ public class TaskServiceImplementedBy645 implements ITask {
 
     @Override
     public void fortuneGame() {
-        import java.util.Scanner;
-        import java.util.Random;
+       // import java.util.Scanner;
 
-        int nenrei = 0 ;
-        String name = null;
+
         int random = 0 ;
         // 問３
         // 以下の内容のプログラムを作成せよ。
@@ -49,24 +47,30 @@ public class TaskServiceImplementedBy645 implements ITask {
 
         // 2. 画面に「あなたの名前を入力してください」と表示
         System.out.println("あなたの名前を入力してください");
+        Scanner scan1 = new Scanner(System.in);
 
         // 3. キーボードから１行の文字入力を受け付け、String型の変数nameに格納
-        Scanner scan = new Scanner(System.in);
-      //  string mozi = scan.next();
+        String name = scan1.next();
 
 
         // 4. 画面に「あなたの年齢を入力してください」と表示
         System.out.println("あなたの年齢を入力してください");
-        String mozi = scan.next();
 
         // 5. キーボードから１行の文字入力を受け付け、String型の変数ageStringに格納
         // 6. 変数ageStringの内容をint型に変換し、int型の変数ageに代入
+        Scanner scan2 = new Scanner(System.in);
+        String ageString = scan2.next();
+
+
         // 7. ０から３までの乱数を生成し、int型の変数fortuneに代入
         // 8. fortuneの数値をインクリメント演算子で１増やし、１から４の乱数する
+        Random rnd = new Random ();
+        int fortune = rnd.nextInt(4)+1 ;
+
         // 9. 画面に「占いの結果が出ました！」と表示
         System.out.println("あなたの年齢を入力してください");
         // 10. 画面に「(年齢)歳の(名前)さん、あなたの運気番号は(乱数)です。」と表示 ※カッコの中身は変数
-        System.out.println( nenrei +"歳の"+ name +"さん、あなたの運気番号"+ random +"はです。");
+        System.out.println( ageString +"歳の"+ name +"さん、あなたの運気番号"+ fortune +"はです。");
 
         // 11. 画面に「1:大吉 2:中吉 3:吉 4:凶」と表示
         System.out.println("1:大吉  2:中吉  3:吉  4:凶");
