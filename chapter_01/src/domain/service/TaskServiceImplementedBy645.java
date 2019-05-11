@@ -18,7 +18,7 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void learnVariable() {
         int x = 3 ;
         int y = 5 ;
-        int z = x*y;
+        int z = x * y;
         System.out.println("縦幅" + x + "横幅 "+ y +" の長方形の面積は、"+ z );
     }
 
