@@ -70,7 +70,7 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 9. 画面に「占いの結果が出ました！」と表示
         System.out.println("あなたの年齢を入力してください");
         // 10. 画面に「(年齢)歳の(名前)さん、あなたの運気番号は(乱数)です。」と表示 ※カッコの中身は変数
-        System.out.println( ageString +"歳の"+ name +"さん、あなたの運気番号"+ fortune +"はです。");
+        System.out.println( ageString +"歳の"+ name +"さん、あなたの運気番号は "+ fortune +" です。");
 
         // 11. 画面に「1:大吉 2:中吉 3:吉 4:凶」と表示
         System.out.println("1:大吉  2:中吉  3:吉  4:凶");
