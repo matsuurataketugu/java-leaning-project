@@ -1,0 +1,12 @@
+@startuml
+class Paladin {
+    +name
+    +life
+    +mana
+    MAX_LIFE
+    MAX_MANA
+    +zeal()
+    +fanaticism()
+    +meditation()
+}
+@enduml
