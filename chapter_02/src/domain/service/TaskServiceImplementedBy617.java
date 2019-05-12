@@ -13,7 +13,7 @@ public class TaskServiceImplementedBy617 implements ITask {
 
     @Override
     public void learnTypeConversion() {
-        String answer ="「正しい文は"
+        String answer ="「正しい文は";
         System.out.println(answer);
     }
 
