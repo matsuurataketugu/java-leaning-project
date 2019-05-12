@@ -14,7 +14,7 @@ public class TaskServiceImplementedBy506 implements ITask {
 
     @Override
     public void learnTypeConversion() {
-        System.out.println("正しい文は②, ⑤, ⑦です。");
+        System.out.println("正しい文は②, ④, ⑤, ⑦です。");
     }
 
     @Override
@@ -29,7 +29,7 @@ public class TaskServiceImplementedBy506 implements ITask {
         int age = Integer.parseInt(ageString);
 
         java.util.Random rnd = new java.util.Random();
-        int fortune = rnd.nextInt(3);
+        int fortune = rnd.nextInt(4);
         fortune++;
 
         System.out.println("占いの結果が出ました！");
