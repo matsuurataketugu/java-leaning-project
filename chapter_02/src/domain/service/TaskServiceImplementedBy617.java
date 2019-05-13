@@ -9,11 +9,13 @@ public class TaskServiceImplementedBy617 implements ITask {
         System.out.println(answer);
     }
 
+
     @Override
     public void learnTypeConversion() {
         String answer ="「正しい文は②,④,⑤,⑦です」";
         System.out.println(answer);
     }
+
 
     @Override
     public void fortuneGame() {
