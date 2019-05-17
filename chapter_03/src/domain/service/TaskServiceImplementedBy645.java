@@ -12,12 +12,15 @@ public class TaskServiceImplementedBy645 implements ITask {
         int age1 = 20;
         int age2 = 15;
         int ageSUM  = age1 +  age2;
-       // ageSUM * 2 <= 60;
+        ageSUM  = ageSUM * 2;
+
         // 3. 変数ageが奇数である
-       // int age % 2 == 1 ;
-        //age % 2 == 1 ;
+        int age ;
+         // age % 2  ;
+        age % 2 == 1 ;
 
         // 4. 変数jobの中身の文字列が「プログラマー」と等しい
+        String job = 'プログラマー';
 
     }
 
@@ -25,12 +28,16 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void learnIfSyntax2() {
         // 問２
         // 下記の中から条件式として正しいものを表示せよ
-       //  cost = 300 * 1.08;
+        System.out.println("A. cost = 300 * 1.08");
+
         // B. 3
-         // age != 30;
+        System.out.println("C. age != 30");
+        //
         // D. true
-         // b + 5 < 20;
-         //gender = true;
+        System.out.println("E. b + 5 < 20");
+        //
+        System.out.println("F. gender = true");
+        //
     }
 
     @Override
