@@ -49,16 +49,24 @@ public class TaskServiceImplementedBy645 implements ITask {
         Random sexrnd = new Random ();
         int sex = sexrnd.nextInt(2) ;
 
-
         Random agernd = new Random ();
         int age = agernd.nextInt(100) ;
-
-
         //    またint型変数ageを定義し、適当な数字を格納
         // 2. 画面に「こんにちは」と表示
+        System.out.println( "こんにちは");
+
         // 3. もし変数sexが0なら「私は男です」、そうでなければ「私は女です」と表示
-        // 4. もし変数sexが男ならage変数の中身を表示して「(age)歳です」と表示
+        if(sex == 0){
+            // 4. もし変数sexが男ならage変数の中身を表示して「(age)歳です」と表示
+            System.out.println( "男です");
+            System.out.println( age +"歳です");
+        }else{
+            System.out.println( "女です");
+        }
         // 5. 最後に「よろしくお願いします」と表示
+        System.out.println( "よろしくお願いします");
+
+        
 
     }
 
