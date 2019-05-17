@@ -1,5 +1,6 @@
 package domain.service;
 
+import java.util.Random;
 public class TaskServiceImplementedBy645 implements ITask {
     @Override
     public void learnIfSyntax1() {
@@ -17,6 +18,8 @@ public class TaskServiceImplementedBy645 implements ITask {
         int ageSUM  = age1 +  age2;
         ageSUM * 2 < 60;
 
+
+        -----------------------------------------------------------------
         // 3. 変数ageが奇数である
         int age ;
         age % 2 == 1 ;
@@ -42,6 +45,14 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 問３
         // 下記の内容に沿ったプログラムを作成せよ
         // 1. int型の変数sexを定義し、０か１を格納
+
+        Random sexrnd = new Random ();
+        int sex = sexrnd.nextInt(2) ;
+
+
+        Random agernd = new Random ();
+        int age = agernd.nextInt(100) ;
+
 
         //    またint型変数ageを定義し、適当な数字を格納
         // 2. 画面に「こんにちは」と表示
