@@ -15,13 +15,18 @@ public class TaskServiceImplementedBy645 implements ITask {
         ageSUM  = ageSUM * 2;
 
         // 3. 変数ageが奇数である
-        int age ;
-         // age % 2  ;
-        age % 2 == 1 ;
-
+        System.out.print("奇数を入力してください＞");
+        int age = new java.util.Scanner(System.in).nextInt() ;
+        if(age % 2 == 1){
+            System.out.print("奇数");
+        }else{
+            System.out.print("偶数");
+        }
         // 4. 変数jobの中身の文字列が「プログラマー」と等しい
-        String job = 'プログラマー';
+        String job = "プログラマー";
+        String mojiretu = "プログラマー";
 
+        job.equals(mojiretu);
     }
 
     @Override
