@@ -105,10 +105,10 @@ public class TaskServiceImplementedBy617 implements ITask {
                 System.out.println("アタリ！");
                 break;
             } else {
-                System.out.print("ハズレ！");
+                System.out.println("ハズレ！");
             }
         }
-        System.out.print("ゲームを終了します");
+        System.out.println("ゲームを終了します");
     }
 }
 
