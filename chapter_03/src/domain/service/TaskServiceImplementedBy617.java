@@ -34,8 +34,9 @@ public class TaskServiceImplementedBy617 implements ITask {
 
     @Override
     public void learnIfStatement1() {
-        int sex = 1;
-        int age = 26;
+        java.util.Random rnd = new java.util.Random();
+        int sex = rnd.nextInt(2);
+        int age = rnd.nextInt(99);
         System.out.println("こんにちは");
         if (sex == 0) {
             System.out.println("私は男です");
@@ -61,9 +62,10 @@ public class TaskServiceImplementedBy617 implements ITask {
         if (weather) {
             System.out.println("洗濯をする");
             System.out.println("彼女or彼氏とデート");
-        } else
+        } else {
             System.out.println("家でゲーム");
-        System.out.println("寝る");
+            System.out.println("寝る");
+        }
     }
 
     @Override
@@ -73,19 +75,19 @@ public class TaskServiceImplementedBy617 implements ITask {
         int selected = sc1.nextInt();
         switch (selected) {
             case 1:
-                System.out.print("「検索します」");
+                System.out.println("「検索します」");
                 break;
             case 2:
-                System.out.print("「登録します」");
+                System.out.println("「登録します」");
                 break;
             case 3:
-                System.out.print("「削除します」");
+                System.out.println("「削除します」");
                 break;
             case 4:
-                System.out.print("「変更します」");
+                System.out.println("「変更します」");
                 break;
             default:
-                System.out.print("「メニューにありあません」");
+                System.out.println("「メニューにありあません」");
                 break;
         }
     }
