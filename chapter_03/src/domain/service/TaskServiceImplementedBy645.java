@@ -7,16 +7,19 @@ public class TaskServiceImplementedBy645 implements ITask {
 
         // 1. 変数weightの値が60に等しい
         int weight = 60 ;
+        if( weight == 60){
+        }
 
         // 2. 変数age1とage2の合計を2倍したものが60を超えている
         int age1 = 20;
         int age2 = 15;
         int ageSUM  = age1 +  age2;
         ageSUM  = ageSUM * 2;
+        if(ageSUM > 60){
+        }
 
         // 3. 変数ageが奇数である
-        System.out.print("奇数を入力してください＞");
-        int age = new java.util.Scanner(System.in).nextInt() ;
+        int age = 9;
         if(age % 2 == 1){
             System.out.print("奇数");
         }else{
@@ -25,24 +28,22 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 4. 変数jobの中身の文字列が「プログラマー」と等しい
         String job = "プログラマー";
         String mojiretu = "プログラマー";
+        if(job.equals(mojiretu)){
+        }
 
-        job.equals(mojiretu);
     }
 
     @Override
     public void learnIfSyntax2() {
         // 問２
         // 下記の中から条件式として正しいものを表示せよ
-        System.out.println("A. cost = 300 * 1.08");
-
+        // A. cost = 300 * 1.08
         // B. 3
-        System.out.println("C. age != 30");
-        //
-        // D. true
-        System.out.println("E. b + 5 < 20");
-        //
-        System.out.println("F. gender = true");
-        //
+             //C. age != 30
+             // D. true
+             // E. b + 5 < 20
+             // F. gender = true
+        System.out.println( "条件式として適切なものは、C,D,E,Fが正しいです。");
     }
 
     @Override
@@ -70,9 +71,6 @@ public class TaskServiceImplementedBy645 implements ITask {
         }
         // 5. 最後に「よろしくお願いします」と表示
         System.out.println( "よろしくお願いします");
-
-
-
     }
 
     // 問４
@@ -91,7 +89,7 @@ public class TaskServiceImplementedBy645 implements ITask {
             System.out.println("家でゲーム");
             System.out.println("寝る");
         }
-        }
+     }
 
     @Override
     public void learnSwitchStatement() {
@@ -125,8 +123,6 @@ public class TaskServiceImplementedBy645 implements ITask {
                 System.out.println("メニューにありません");
                 break;
         }
-
-
     }
 
     @Override
@@ -139,16 +135,16 @@ public class TaskServiceImplementedBy645 implements ITask {
         System.out.println("【数当てゲーム】");
         Random gamernd = new Random ();
         int answer = gamernd.nextInt(10) ;
-        for (int game = 0; game < 4; game++) {
+        for (int game = 0;  ;game++) {
             System.out.println("0 ～ 9 の数字を入力してください");
             // 3. for文を用いて5回のループ処理を作成
             // (以下4-7はループ中の処理)
             // 4. 画面に「0 ～ 9 の数字を入力してください」を表示
             // 5. 数字を入力し変数numに格納
-            boolean gameaans = new java.util.Scanner(System.in).nextInt() == answer;
-            if (gameaans) {
+            boolean isMatched = new java.util.Scanner(System.in).nextInt() == answer;
+            if (isMatched) {
                 System.out.println("アタリ！");
-                 game = 4;
+                 break;
             } else {
                 // 6. 入力した数字がanswerと一致したら「アタリ！」と画面に表示して繰り返しを終了
                 // 7. もし不一致ならば「ハズレ！」と画面に表示
