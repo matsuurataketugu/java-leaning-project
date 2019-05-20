@@ -24,7 +24,16 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 問２
         // 下記のプログラムを作成せよ
         // 1. ３つの口座残高「121902」「8302」「55100」が格納されている moneyList を宣言
+         int [] moneyList;
+        moneyList = new int[3];
+        moneyList[0] = 121902;
+        moneyList[1] = 8302;
+        moneyList[2] = 55100;
+
         // 2. その配列の要素を１つずつfor文で取り出して画面に表示
+        for(int i=0;i<moneyList.length;i++ ){
+            System.out.println(moneyList[i] );
+        }
         // 3. 同じ配列の要素を拡張for文で１つずつ取り出して画面に表示
 
     }
