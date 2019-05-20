@@ -43,7 +43,7 @@ public class TaskServiceImplementedBy645 implements ITask {
              // D. true
              // E. b + 5 < 20
              // F. gender = true
-        System.out.println( "条件式として適切なものは、C,D,E,Fが正しいです。");
+        System.out.println( "条件式として適切なものは、C,D,Eが正しいです。");
     }
 
     @Override
@@ -135,7 +135,7 @@ public class TaskServiceImplementedBy645 implements ITask {
         System.out.println("【数当てゲーム】");
         Random gamernd = new Random ();
         int answer = gamernd.nextInt(10) ;
-        for (int game = 0;  ;game++) {
+        for (int game = 0;game < 5  ;game++) {
             System.out.println("0 ～ 9 の数字を入力してください");
             // 3. for文を用いて5回のループ処理を作成
             // (以下4-7はループ中の処理)
