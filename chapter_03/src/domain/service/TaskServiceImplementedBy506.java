@@ -14,7 +14,7 @@ public class TaskServiceImplementedBy506 implements ITask {
 
         };
 
-        if((age1 + age2) > 60){
+        if((age1 + age2) * 2 > 60){
 
         };
 
@@ -32,15 +32,17 @@ public class TaskServiceImplementedBy506 implements ITask {
     @Override
     public void learnIfSyntax2() {
 
-        System.out.println("正しいのはA、C、Eです。");
+        System.out.println("正しいのはC、D、Eです。");
 
     }
 
     @Override
     public void learnIfStatement1() {
 
-        int sex = 0;
         int age = 30;
+
+        java.util.Random rnd = new java.util.Random();
+        int sex = rnd.nextInt(2);
 
         System.out.println("こんにちは");
 
