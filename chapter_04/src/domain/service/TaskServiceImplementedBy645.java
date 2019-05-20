@@ -30,11 +30,16 @@ public class TaskServiceImplementedBy645 implements ITask {
         moneyList[1] = 8302;
         moneyList[2] = 55100;
 
-        // 2. その配列の要素を１つずつfor文で取り出して画面に表示
+         //2. その配列の要素を１つずつfor文で取り出して画面に表示
         for(int i=0;i<moneyList.length;i++ ){
             System.out.println(moneyList[i] );
         }
+
         // 3. 同じ配列の要素を拡張for文で１つずつ取り出して画面に表示
+        for(int i : moneyList ){
+            System.out.println("↓拡張for文");
+            System.out.println( moneyList );
+        }
 
     }
     // 問３
