@@ -3,16 +3,22 @@ package domain.service;
 public class TaskServiceImplementedBy645 implements ITask {
     @Override
     public void learnArrayDeclaration() {
-        // 問１
-        // 下記の配列を宣言せよ
-        // また値の初期化は不要とする
         // 1. int 型の値を４個まとめて格納できる配列 points
+        int [] points;
+        points = new int[4];
+
         // 2. double 型の値を４個まとめて格納できる配列 weights
+        double[] weights;
+        weights = new double[4];
+
         // 3. boolean 型の値を４個まとめて格納できる配列 answers
+        boolean[] answers;
+        answers = new boolean[4];
+
         // 4. String 型の値を４個まとめて格納できる配列 names
-
+        String [] names;
+        names = new String[4];
     }
-
     @Override
     public void learnArrayFactorDisplay() {
         // 問２
