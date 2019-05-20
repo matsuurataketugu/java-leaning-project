@@ -66,7 +66,6 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 8. fortuneの数値をインクリメント演算子で１増やし、１から４の乱数する
         Random rnd = new Random ();
         int fortune = rnd.nextInt(4)+1 ;
-
         // 9. 画面に「占いの結果が出ました！」と表示
         System.out.println("あなたの年齢を入力してください");
         // 10. 画面に「(年齢)歳の(名前)さん、あなたの運気番号は(乱数)です。」と表示 ※カッコの中身は変数
