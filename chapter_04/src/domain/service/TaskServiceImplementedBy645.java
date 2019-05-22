@@ -51,8 +51,16 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void whatKindOfArraysException() {
         int[] count = null;
         float[] heights = { 171.3F, 175.0F };
+
 //        System.out.println(count[1]);
+           //countにnullを代入して
+           //nullを参照しようとしてるため
+           //NullPointExceotionがでてしまう
+
 //        System.out.println(heights[2]);
+           //heightsに添字２が存在しない
+           // heights[0] = 171.3F,
+           // heights[1] = 175.0F
     }
 
     @Override
