@@ -1,4 +1,6 @@
 package domain.service;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TaskServiceImplementedBy645 implements ITask {
     @Override
@@ -68,7 +70,11 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 問４
         // 下記の仕様で「数当てゲーム」を作成せよ
         // 1. int型で要素数３の配列 numbers を準備、このとき初期値は 3,4,9 とする
-        int numbers[] = {3, 4, 9};
+        List<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(9);
+
         // 2. 画面に「１桁の数字を入力してください > 」と表示
         System.out.print("１桁の数字を入力してください >");
 
@@ -77,17 +83,13 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 5. 回答権は３回までとし、それまでに当たらなければ「ハズレ！」と表示
         for (int i = 0; i < 3; i++) {
             int input = new java.util.Scanner(System.in).nextInt();
-            for (int j : numbers) {
-                if (j == input) {
-                    System.out.println("アタリ！");
-                    i = 3;
-                }else{
-                    System.out.println("ハズレ！");
-                    //  System.out.println(j);
-                }
-                // System.out.println("アタリ！");
-                // System.out.println("ハズレ！");
+            if (numbers.contains(input)) {
+                System.out.println("アタリ！");
+                i = 3;
+            } else {
+                System.out.println("ハズレ！");
             }
         }
+
     }
 }
