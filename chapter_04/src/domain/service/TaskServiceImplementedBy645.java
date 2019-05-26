@@ -85,11 +85,19 @@ public class TaskServiceImplementedBy645 implements ITask {
             int input = new java.util.Scanner(System.in).nextInt();
             if (numbers.contains(input)) {
                 System.out.println("アタリ！");
-                i = 3;
+                break;
             } else {
                 System.out.println("ハズレ！");
             }
         }
+        //・ArrayList　
+        // 配列のようにデータを格納できるオブジェクト
 
+        //・ List<Integer> numbers
+        // 整数型をリストで格納できるnumbersの宣言
+        //<Integer>の部分には格納するデータの型によって変わる
+
+        //・numbers.add(3)
+        // numbersの中に３を追加する。
     }
 }
