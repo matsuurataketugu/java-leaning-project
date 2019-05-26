@@ -98,6 +98,7 @@ public class TaskServiceImplementedBy645 implements ITask {
         //<Integer>の部分には格納するデータの型によって変わる
 
         //・numbers.add(3)
+        // 配列に値を追加するaddにより
         // numbersの中に３を追加する。
     }
 }
