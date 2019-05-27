@@ -53,20 +53,28 @@ public class TaskServiceImplementedBy617 implements ITask {
         numbers[0] = 3;
         numbers[1] = 4;
         numbers[2] = 9;
+        boolean flg = false;
 
-        //2.
-        System.out.println("１桁の数字を入力してください >");
-
+        //2.3.4.5.
         for (int i = 0; i < 3; i++) {
+            System.out.println("１桁の数字を入力してください >");
             String inputString = new java.util.Scanner(System.in).next();
             int input = Integer.parseInt(inputString);
-            if (input == numbers[i]) {
-                System.out.println("アタリ！");
-                break;
-            } else {
-                System.out.println("ハズレ！");
+                for (int j = 0; j < 3; j++) {
+                if (input == numbers[j]) {
+                    System.out.println("アタリ！");
+                    flg = true;
+                    break;
+                 }
+             }
+                if(flg) {
+                    break;
+                }
+
+                if(!flg) {
+                    System.out.println("ハズレ！");
+                }
             }
         }
     }
-}
 
