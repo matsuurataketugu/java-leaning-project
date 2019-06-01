@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class TaskServiceImplementedBy645 implements ITask {
     @Override
     public void learnMethod1() {
+
         //}
         // 問１
         // 下記のメソッドを作成せよ
@@ -15,11 +16,11 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 処理内容  ：名前、年齢、身長、性別(男/女)を入力させ、入力値をそれぞれ変数に格納して結果を画面に表示
         // 変数の型はふさわしいものを定義すること、最低限の入力チェックは行うこと
 
-        private void selfIntroduction() {
-
+      //private void selfIntroduction() {
+        //引数なし　→　selfIntroduction()
+        //返り値無し　→　void
             System.out.print("お名前は？＞");
             String name = new Scanner(System.in).next();
-            //String name = scan1.next();
 
             System.out.print("年齢は？＞");
             int old = new Scanner(System.in).nextInt();
@@ -30,11 +31,8 @@ public class TaskServiceImplementedBy645 implements ITask {
             System.out.print("性別は？(男/女)＞");
             String sex = new Scanner(System.in).next();
 
-            System.out.println(name);
-            System.out.println(old);
-            System.out.println(sintyou);
-            System.out.println(sex);
-        }
+            System.out.println(old + "歳の" + name + "さんは、伸長が" + sintyou + "の" + sex + "なんですね！");
+        //}
     }
 
     @Override
@@ -48,6 +46,31 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 処理内容  ：引数で受け取った数字の段の九九を画面に表示
         // 九九の結果を配列に格納した後で結果を表示すること
         // 変数の型はふさわしいものを定義すること、最低限の入力チェックは行うこと
+
+        // 引数      ：１から９の整数
+        int namberList[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        //九九結果の格納先 81個の値が入る配列の宣言
+        int kukuList[] = new int[81];
+
+        //for (int i = 0; i < kukuList.length; i++){
+            for (int j = 0; j < namberList.length; j++) {
+                for (int k = 0; k < namberList.length; k++) {
+                    // System.out.println(namberList[j] * namberList[i]);
+                   // kukuList[i] = namberList[j] * namberList[k];
+
+                }
+            }
+         //}
+        System.out.println(kukuList[0]);
+        System.out.println(kukuList[1]);
+        System.out.println(kukuList[2]);
+        System.out.println(kukuList[3]);
+        System.out.println(kukuList[4]);
+        System.out.println(kukuList[5]);
+        System.out.println(kukuList[6]);
+
+
 
     }
 
