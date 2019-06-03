@@ -21,13 +21,13 @@ public class TaskServiceImplementedBy506 implements ITask {
 
         System.out.println("身長を入力してください >");
         String sizeString = new java.util.Scanner(System.in).next();
-        int size = Integer.parseInt(sizeString);
+        double size = Double.parseDouble(sizeString);
 
         System.out.println("性別(男/女)を入力してください >");
         String sex = new java.util.Scanner(System.in).next();
 
-        if ("".equals(name) || "".equals(ageString) || "".equals(sizeString) || "".equals(sex)) {
-            System.out.println("入力されていない項目があります。");
+        if (!"男".equals(sex) || !"女".equals(sex)) {
+            System.out.println("性別が正しく入力されていません。");
             return;
         }
         System.out.println("名前は" + name + "です。");
@@ -40,7 +40,14 @@ public class TaskServiceImplementedBy506 implements ITask {
     @Override
     public void learnMethod2() {
 
-        multiplication(2);
+        System.out.println("九九を表示します。何の段を表示しますか？");
+        String numString = new java.util.Scanner(System.in).next();
+        try {
+            int num = Integer.parseInt(numString);
+            multiplication(num);
+        } catch (NumberFormatException e) {
+            System.out.println("数字以外が入力されました。");
+        }
 
     }
 
@@ -57,9 +64,12 @@ public class TaskServiceImplementedBy506 implements ITask {
             results[i] = number * (i + 1);
         }
 
-        for (int j = 0; j < 9; j++) {
-            results[j] = number * (j + 1);
-            System.out.println(number + "×" + (j + 1) + " = " + results[j]);
+        int j = 1;
+
+        for (int value : results) {
+
+            System.out.println(number + "×" + (j) + " = " + value);
+            j++;
         }
 
     }
@@ -69,30 +79,43 @@ public class TaskServiceImplementedBy506 implements ITask {
 
         System.out.println("西暦を入力してください。");
         String yearString = new java.util.Scanner(System.in).next();
-        int year = Integer.parseInt(yearString);
-
-        System.out.println("元号は" + yearToEra(year) + "です");
+        try {
+            int year = Integer.parseInt(yearString);
+            System.out.println("元号は" + yearToEra(year) + "です");
+        } catch (NumberFormatException e) {
+            System.out.println("数字以外が入力されました。");
+        }
 
     }
 
     private String yearToEra (int year) {
 
         String gengou = "";
+        final int MIN_YEAR = 1900;
+        final int MAX_YEAR = 2020;
+        final int LAST_MEIJI_YEAR = 1911;
+        final int FIRST_TAISYO_YEAR = 1912;
+        final int LAST_TAISYO_YEAR = 1925;
+        final int FIRST_SYOWA_YEAR = 1926;
+        final int LAST_SYOWA_YEAR = 1988;
+        final int FIRST_HEISEI_YEAR = 1989;
+        final int LAST_HEISEI_YEAR = 2018;
+        final int FIRST_REIWA_YEAR = 2019;
 
-        if (year < 1900 || year > 2020) {
+        if (year < MIN_YEAR || year > MAX_YEAR) {
             System.out.println("入力範囲が正しくありません。");
             return "該当なし";
         }
 
-        if (year >= 1900 && year <= 1911) {
+        if (year >= MIN_YEAR && year <= LAST_MEIJI_YEAR) {
             gengou = "明治";
-        } else if (year >= 1912 && year <= 1925) {
+        } else if (year >= FIRST_TAISYO_YEAR && year <= LAST_TAISYO_YEAR) {
             gengou = "大正";
-        } else if (year >= 1913 && year <= 1988) {
+        } else if (year >= FIRST_SYOWA_YEAR && year <= LAST_SYOWA_YEAR) {
             gengou = "昭和";
-        } else if (year >= 1989 && year <= 2018) {
+        } else if (year >= FIRST_HEISEI_YEAR && year <= LAST_HEISEI_YEAR) {
             gengou = "平成";
-        } else if (year >= 2019) {
+        } else if (year >= FIRST_REIWA_YEAR) {
             gengou = "令和";
         }
 
@@ -103,15 +126,19 @@ public class TaskServiceImplementedBy506 implements ITask {
     @Override
     public void learnMethod4() {
 
-        System.out.println("西暦を入力してください。");
-        String yearString = new java.util.Scanner(System.in).next();
-        int year = Integer.parseInt(yearString);
+        try {
+            System.out.println("西暦を入力してください。");
+            String yearString = new java.util.Scanner(System.in).next();
+            int year = Integer.parseInt(yearString);
 
-        System.out.println("価格を入力してください。");
-        String priceString = new java.util.Scanner(System.in).next();
-        int price = Integer.parseInt(priceString);
+            System.out.println("価格を入力してください。");
+            String priceString = new java.util.Scanner(System.in).next();
+            int price = Integer.parseInt(priceString);
 
-        taxCalculation(year,price);
+            taxCalculation(year,price);
+        } catch (NumberFormatException e) {
+            System.out.println("数字以外が入力されました。");
+        }
 
     }
 
@@ -119,6 +146,16 @@ public class TaskServiceImplementedBy506 implements ITask {
 
         String gengou = "";
         int tax = 0;
+        final int TAX_ZERO_PERSENT = 0;
+        final int TAX_THREE_PERSENT = 3;
+        final int TAX_FIVE_PERSENT = 5;
+        final int TAX_EIGHT_PERSENT = 8;
+        final int TAX_TEN_PERSENT = 10;
+
+        final double TAX_DOUBLE_THREE_PERSENT = 1.03;
+        final double TAX_DOUBLE_FIVE_PERSENT = 1.05;
+        final double TAX_DOUBLE_EIGHT_PERSENT = 1.08;
+        final double TAX_DOUBLE_TEN_PERSENT = 1.10;
 
         double resultPrice = price;
 
@@ -132,33 +169,23 @@ public class TaskServiceImplementedBy506 implements ITask {
             return;
         }
 
-        if (year >= 1900 && year <= 1911) {
-            gengou = "明治";
-        } else if (year >= 1912 && year <= 1925) {
-            gengou = "大正";
-        } else if (year >= 1913 && year <= 1988) {
-            gengou = "昭和";
-        } else if (year >= 1989 && year <= 2018) {
-            gengou = "平成";
-        } else if (year >= 2019) {
-            gengou = "令和";
-        }
+        gengou = yearToEra(year);
 
         if (year >= 1900 && year <= 1988) {
-            tax = 0;
+            tax = TAX_ZERO_PERSENT;
             resultPrice = price;
         } else if (year >= 1989 && year <= 1996) {
-            tax = 3;
-            resultPrice = price * 1.03;
+            tax = TAX_THREE_PERSENT;
+            resultPrice = price * TAX_DOUBLE_THREE_PERSENT;
         } else if (year >= 1997 && year <= 2013) {
-            tax = 5;
-            resultPrice = price * 1.05;
+            tax = TAX_FIVE_PERSENT;
+            resultPrice = price * TAX_DOUBLE_FIVE_PERSENT;
         } else if (year >= 2014 && year <= 2018) {
-            tax = 8;
-            resultPrice = price * 1.08;
+            tax = TAX_EIGHT_PERSENT;
+            resultPrice = price * TAX_DOUBLE_EIGHT_PERSENT;
         } else if (year >= 2019) {
-            tax = 10;
-            resultPrice = price * 1.10;
+            tax = TAX_TEN_PERSENT;
+            resultPrice = price * TAX_DOUBLE_TEN_PERSENT;
         }
 
         String strPirce = String.valueOf(resultPrice);
@@ -174,12 +201,11 @@ public class TaskServiceImplementedBy506 implements ITask {
 
         System.out.println("君の名は何回見た？");
         String numString = new java.util.Scanner(System.in).next();
-
-        if ("".equals(numString)) {
-            System.out.println("回数が未入力です");
-        } else {
+        try {
             int num = Integer.parseInt(numString);
             yourName(num);
+        } catch (NumberFormatException e) {
+            System.out.println("数字以外が入力されました。");
         }
 
         System.out.println("君の名は？");
@@ -196,11 +222,6 @@ public class TaskServiceImplementedBy506 implements ITask {
     }
 
     private void yourName(String name) {
-
-        if ("".equals(name) || name == null) {
-            System.out.println("名前が未入力です");
-            return;
-        }
 
         System.out.println("私は" + name + "です。");
 
