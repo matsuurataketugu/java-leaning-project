@@ -26,7 +26,9 @@ public class TaskServiceImplementedBy506 implements ITask {
         System.out.println("性別(男/女)を入力してください >");
         String sex = new java.util.Scanner(System.in).next();
 
-        if (!"男".equals(sex) || !"女".equals(sex)) {
+        if ("男".equals(sex) || "女".equals(sex)) {
+
+        } else {
             System.out.println("性別が正しく入力されていません。");
             return;
         }
