@@ -65,32 +65,28 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 処理内容  ：引数で受け取った数字の段の九九を画面に表示
         // 九九の結果を配列に格納した後で結果を表示すること
         // 変数の型はふさわしいものを定義すること、最低限の入力チェックは行うこと
-
-        // 引数      ：１から９の整数
-        int namberList[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-        //九九結果の格納先 81個の値が入る配列の宣言
-        int kukuList[] = new int[81];
-
-        //for (int i = 0; i < kukuList.length; i++){
-        for (int j = 0; j < namberList.length; j++) {
-            for (int k = 0; k < namberList.length; k++) {
-                // System.out.println(namberList[j] * namberList[i]);
-                // kukuList[i] = namberList[j] * namberList[k];
-
-            }
+        System.out.print("九九を行います！数字を入力してください＞");
+        int kuku = new Scanner(System.in).nextInt();
+        if (kuku > 10) {
+            System.out.println("九九は１から９しかできません！！");
+        }else {
+            multiplication(kuku);
         }
-        //}
-        System.out.println(kukuList[0]);
-        System.out.println(kukuList[1]);
-        System.out.println(kukuList[2]);
-        System.out.println(kukuList[3]);
-        System.out.println(kukuList[4]);
-        System.out.println(kukuList[5]);
-        System.out.println(kukuList[6]);
+        }
+
+    private void multiplication(int kakezan){
+        int  kukuList[] = new int[10];
+        for(int i = 0; i<=9; i++){
+            kukuList[i] = kakezan * i;
+        }
+        System.out.println(kakezan + "の段は↓");
+        for(int j : kukuList ){
+            System.out.println(j);
+        }
 
 
     }
+
 
     @Override
     public void learnMethod3() {
@@ -106,31 +102,18 @@ public class TaskServiceImplementedBy645 implements ITask {
         // 変数の型はふさわしいものを定義すること、最低限の入力チェックは行うこと
         System.out.print("西暦を元号に変換します。西暦を入力してください＞");
         int seireki = new Scanner(System.in).nextInt();
-        int minnegou = 1900;
-        int maxnengou = 2020;
-        if (seireki <= maxnengou) {
-            if (minnegou <= seireki) {
-                switch (seireki) {
-                    case 1:
-                        System.out.println("検索します");
-                        break;
+        yearToEra(seireki);
+        System.out.print(gengou);
+    }
 
-                    case 2:
-                        System.out.println("登録します");
-                        break;
+    private String yearToEra(int nensuu) {
+    if(nensuu< 1911){
+        String gengou = "明治";
+    }
+    return gengou;
+    }
 
-                    case 3:
-                        System.out.println("削除します");
-                        break;
 
-                    case 4:
-                        System.out.println("変更します");
-                        break;
-
-                }
-            }
-        }
-        }
 
         @Override
         public void learnMethod4 () {
