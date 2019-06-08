@@ -1,5 +1,7 @@
 package domain.service;
 
+import java.math.BigDecimal;
+
 public class TaskServiceImplementedBy617 implements ITask {
     @Override
     public void learnMethod1() {
@@ -15,7 +17,7 @@ public class TaskServiceImplementedBy617 implements ITask {
 
             System.out.println("身長を記載入力してください");
             String heightString= new java.util.Scanner(System.in).next();
-            int height = Integer.parseInt(heightString);
+            double height = Double.parseDouble(heightString);
 
             System.out.println("性別(男/女)を入力してください");
             String sex = new java.util.Scanner(System.in).next();
@@ -31,7 +33,10 @@ public class TaskServiceImplementedBy617 implements ITask {
 
     @Override
     public void learnMethod2() {
-        multiplication(2);
+        System.out.println("何の段の九九を表示しますか？");
+        String numString = new java.util.Scanner(System.in).next();
+        int num = Integer.parseInt(numString);
+        multiplication(num);
     }
 
         private void multiplication(int number) {
@@ -47,11 +52,12 @@ public class TaskServiceImplementedBy617 implements ITask {
                 results[i] = number * (i + 1);
             }
 
+            int j = 1;
 
-            for (int j = 0; j < 9; j++) {
-                results[j] = number * (j + 1);
+            for (int value : results) {
 
-                System.out.println(number + "*" + (j + 1) + "=" + results[j]);
+                System.out.println(number + "*" + (j) + "=" + value);
+                j++;
             }
         }
 
@@ -68,21 +74,31 @@ public class TaskServiceImplementedBy617 implements ITask {
     private String yearToEra (int year) {
 
         String era = "";
+        final int MIN_YEAR = 1990;
+        final int MAX_YEAR = 2020;
+        final int LAST_MEIJI_YEAR = 1991;
+        final int FIRST_TAISYO_YEAR = 1925;
+        final int LAST_TAISYO_YEAR = 1926;
+        final int FIRST_SYOWA_YEAR = 1988;
+        final int LAST_SYOWA_YEAR = 1988;
+        final int FIRST_HEISEI_YEAR = 1989;
+        final int LAST_HEISEI_YEAR = 2018;
+        final int FIRAT_REIWA_YEAR = 2019;
 
-        if (year < 1900 || year > 2020) {
+        if (year < MIN_YEAR || year > MAX_YEAR) {
             System.out.println("入力範囲が正しくありません。1900年～2020年の間で入力してください");
             return "該当なし";
         }
 
-        if (year >= 1900 && year <= 1911) {
+        if (year >= MIN_YEAR && LAST_MEIJI_YEAR <= 1911) {
             era = "明治";
-        } else if (year >= 1912 && year <= 1925) {
+        } else if (year >= FIRST_TAISYO_YEAR && LAST_TAISYO_YEAR <= 1925) {
             era = "大正";
-        } else if (year >= 1926 && year <= 1988) {
+        } else if (year >= FIRST_SYOWA_YEAR && year <= LAST_SYOWA_YEAR) {
             era = "昭和";
-        } else if (year >= 1989 && year <= 2018) {
+        } else if (year >= FIRST_HEISEI_YEAR && year <= LAST_HEISEI_YEAR) {
             era = "平成";
-        } else if (year == 2019) {
+        } else if (year >= FIRAT_REIWA_YEAR) {
             era = "令和";
         }
 
@@ -109,6 +125,17 @@ public class TaskServiceImplementedBy617 implements ITask {
 
         String era = "";
         int tax = 0;
+        final int ZERO_CONSUMPTION_TAX_RATE = 0;
+        final int THREE_CONSUMPTION_TAX_RATE = 3;
+        final int FIVE_CONSUMPTION_TAX_RATE = 5;
+        final int EIGHT_CONSUMPTION_TAX_RATE = 8;
+        final int TEN_CONSUMPTION_TAX_RATE = 10;
+
+        final double THREE_CONSUMPTION_TAX_INCLUDED = 1.03;
+        final double FIVE_CONSUMPTION_TAX_INCLUDED = 1.05;
+        final double EIGHT_CONSUMPTION_TAX_INCLUDED = 1.08;
+        final double TEN_CONSUMPTION_TAX_INCLUDED = 1.10;
+
         double resultPrice = price;
 
         if (year < 1900 || year > 2020) {
@@ -116,52 +143,50 @@ public class TaskServiceImplementedBy617 implements ITask {
             return;
         }
 
-        if (year >= 1900 && year <= 1911) {
-            era = "明治";
-        } else if (year >= 1912 && year <= 1925) {
-            era = "大正";
-        } else if (year >= 1926 && year <= 1988) {
-            era = "昭和";
-        } else if (year >= 1989 && year <= 2018) {
-            era = "平成";
-        } else if (year >= 2019) {
-            era = "令和";
-        }
+        era = yearToEra(year);
 
         if (year >= 1900 && year <= 1988) {
-            tax = 0;
+            tax = ZERO_CONSUMPTION_TAX_RATE;
             resultPrice = price;
         } else if (year >= 1989 && year <= 1996) {
-            tax = 3;
-            resultPrice = price * 1.03;
+            tax = THREE_CONSUMPTION_TAX_RATE;
+            resultPrice = price * THREE_CONSUMPTION_TAX_INCLUDED;
         } else if (year >= 1997 && year <= 2013) {
-            tax = 5;
-            resultPrice = price * 1.05;
+            tax = FIVE_CONSUMPTION_TAX_RATE;
+            resultPrice = price * FIVE_CONSUMPTION_TAX_INCLUDED;
         } else if (year >= 2014 && year <= 2018) {
-            tax = 8;
-            resultPrice = price * 1.08;
-        } else if (year == 2019) {
-            tax = 10;
-            resultPrice = price * 1.10;
+            tax = EIGHT_CONSUMPTION_TAX_RATE;
+            resultPrice = price * EIGHT_CONSUMPTION_TAX_INCLUDED;
+        } else if (year >= 2019) {
+            tax = TEN_CONSUMPTION_TAX_RATE;
+            resultPrice = price * TEN_CONSUMPTION_TAX_INCLUDED;
         }
 
-        System.out.println("元号：" + era + "、消費税率：" + tax + "%" );
+        String strPrice = String.valueOf(resultPrice);
+        BigDecimal bd = new BigDecimal(strPrice);
+        BigDecimal bd1 = bd.setScale(0, BigDecimal.ROUND_DOWN);
+
+        System.out.println("元号：" + era + "、消費税率：" + tax + "%、代金：" + bd1 + "円");
+
 
     }
-
 
 
     @Override
     public void learnMethod5() {
             System.out.println("君の名は何回見た？");
             String numString = new java.util.Scanner(System.in).next();
+            try {
+                int num = Integer.parseInt(numString);
+                yourName(num);
+            } catch (NumberFormatException n){
+                System.out.println("数字を入力してください");
+            }
 
             System.out.println("君の名は？");
             String name = new java.util.Scanner(System.in).next();
-
             yourName(name);
-
-        }
+            }
 
         private void yourName(int num) {
             System.out.println(num + "回");
