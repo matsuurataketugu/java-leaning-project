@@ -43,8 +43,8 @@ public class TaskServiceImplementedBy617 implements ITask {
 
             int results[] = new int[9];
 
-            if (number == 0) {
-                System.out.println("0は九九にはない数字です");
+            if (number == 0 || number > 9) {
+                System.out.println("九九にはない数字です");
                 return;
             }
 
@@ -74,12 +74,12 @@ public class TaskServiceImplementedBy617 implements ITask {
     private String yearToEra (int year) {
 
         String era = "";
-        final int MIN_YEAR = 1990;
+        final int MIN_YEAR = 1900;
         final int MAX_YEAR = 2020;
-        final int LAST_MEIJI_YEAR = 1991;
-        final int FIRST_TAISYO_YEAR = 1925;
-        final int LAST_TAISYO_YEAR = 1926;
-        final int FIRST_SYOWA_YEAR = 1988;
+        final int LAST_MEIJI_YEAR = 1911;
+        final int FIRST_TAISYO_YEAR = 1912;
+        final int LAST_TAISYO_YEAR = 1925;
+        final int FIRST_SYOWA_YEAR = 1926;
         final int LAST_SYOWA_YEAR = 1988;
         final int FIRST_HEISEI_YEAR = 1989;
         final int LAST_HEISEI_YEAR = 2018;
@@ -90,9 +90,9 @@ public class TaskServiceImplementedBy617 implements ITask {
             return "該当なし";
         }
 
-        if (year >= MIN_YEAR && LAST_MEIJI_YEAR <= 1911) {
+        if (year >= MIN_YEAR && year <= LAST_MEIJI_YEAR) {
             era = "明治";
-        } else if (year >= FIRST_TAISYO_YEAR && LAST_TAISYO_YEAR <= 1925) {
+        } else if (year >= FIRST_TAISYO_YEAR && year <= LAST_TAISYO_YEAR) {
             era = "大正";
         } else if (year >= FIRST_SYOWA_YEAR && year <= LAST_SYOWA_YEAR) {
             era = "昭和";
