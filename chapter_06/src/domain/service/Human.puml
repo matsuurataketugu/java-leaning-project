@@ -1,0 +1,8 @@
+@startuml
+class Human {
+    +name
+    +age
+    +sex
+    +selfIntroduction()
+}
+@enduml
