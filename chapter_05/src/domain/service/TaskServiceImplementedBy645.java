@@ -142,14 +142,16 @@ public class TaskServiceImplementedBy645 implements ITask {
         }
 
         //消費税パターンの判定
-        if(nen < 1989){
+        if(nen <=1988){
             taxpattterm = 1;
-        }else if(nen < 1997){
+        }else if(nen >= 1989 && nen <= 1996){
             taxpattterm = 2;
-        }else if(nen < 2020){
+        }else if(nen >= 1997 && nen <= 2013){
             taxpattterm = 3;
-        }else {
+        }else if(nen >= 2014 && nen <= 2018){
             taxpattterm = 4;
+        }else {
+            taxpattterm = 5;
         }
         switch (taxpattterm){
             case 1:
@@ -162,6 +164,9 @@ public class TaskServiceImplementedBy645 implements ITask {
                 tax = 0.05;
                 break;
             case 4:
+                tax = 0.08;
+                break;
+            case 5:
                 tax = 0.1;
                 break;
         }
