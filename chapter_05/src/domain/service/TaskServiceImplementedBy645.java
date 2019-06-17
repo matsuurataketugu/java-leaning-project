@@ -52,7 +52,7 @@ public class TaskServiceImplementedBy645 implements ITask {
     public void learnMethod2() {
         System.out.print("九九を行います！数字を入力してください＞");
         int kuku = new Scanner(System.in).nextInt();
-        if ( kuku == 0 || kuku > 10) {
+        if ( kuku == 0 || kuku >= 10) {
             System.out.println("九九は１から９しかできません！！");
         }else {
             multiplication(kuku);
