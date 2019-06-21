@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Arrays;
 import java.util.List;
+import domain.service.Human506;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -48,6 +49,11 @@ public class MainController {
             case 92:
                 break;
             case 506:
+
+                Human506 human = new Human506();
+
+                human.selfIntroduction();
+
                 break;
             case 617:
                 break;
