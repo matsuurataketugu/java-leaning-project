@@ -2,6 +2,8 @@ package controller;
 
 import java.util.Arrays;
 import java.util.List;
+
+import domain.service.Human092;
 import domain.service.Human506;
 import domain.service.Human617;
 
@@ -16,9 +18,9 @@ public class MainController {
                 if (employeeId == EXIT_PROCESS) {
                     break;
                 } else if (!isValidEmployeeId(employeeId)) {
-                    System.out.println("社員番号 " + employeeId + " さんは課題実施対象者ではありません。");
+                    System.out.println("社員番号 " + employeeId + "さんは課題実施対象者ではありません。");
                 } else {
-                    System.out.println(employeeId + " さんの課題を確認します。");
+                    System.out.println(employeeId + "さんの課題を確認します。");
                     makeCharacter(employeeId);
                     break;
                 }
@@ -48,6 +50,8 @@ public class MainController {
 
         switch (employeeId) {
             case 92:
+                Human092 human092 = new Human092();
+                human092.selfIntroduction();
                 break;
             case 506:
 
