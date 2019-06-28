@@ -1,0 +1,10 @@
+@startuml
+class Boy645 {
+    -{static} final DEFAULT_NAME = "松平 元継"
+    -{static} final DEFAULT_AGE = 10
+    -name
+    -age
+    +prologue()
+    +helpMe()
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class Boy506 {
+    -{static} final DEFAULT_NAME = "堀江 達也"
+    -{static} final DEFAULT_AGE = 10
+    -name
+    -age
+    +prologue()
+    +specialTraining()
+}
+@enduml
