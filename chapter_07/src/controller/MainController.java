@@ -14,9 +14,9 @@ public class MainController {
                 if (employeeId == EXIT_PROCESS) {
                     break;
                 } else if (!isValidEmployeeId(employeeId)) {
-                    System.out.println("社員番号 " + employeeId + " さんは課題実施対象者ではありません。");
+                    System.out.println("社員番号 " + employeeId + "さんは課題実施対象者ではありません。");
                 } else {
-                    System.out.println(employeeId + " さんの課題を確認します。");
+                    System.out.println(employeeId + "さんの課題を確認します。");
                     makeCharacter(employeeId);
                     break;
                 }
@@ -56,7 +56,7 @@ public class MainController {
             case 660:
                 break;
             default:
-                throw new NullPointerException(employeeId + " さんのクラスは存在しません。");
+                throw new NullPointerException(employeeId + "さんのクラスは存在しません。");
         }
     }
 }
