@@ -1,0 +1,10 @@
+@startuml
+class Girl617 {
+    -{static} final DEFAULT_NAME = "渡来 歩美"
+    -{static} final DEFAULT_AGE = 10
+    -name
+    -age
+    +prologue()
+    +research()
+}
+@enduml
