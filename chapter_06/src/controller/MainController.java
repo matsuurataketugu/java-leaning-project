@@ -6,6 +6,7 @@ import java.util.List;
 import domain.service.Human092;
 import domain.service.Human506;
 import domain.service.Human617;
+import domain.service.Human645;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -67,6 +68,8 @@ public class MainController {
                 human1.selfIntroduction();
 
             case 645:
+                Human645 human645= new Human645();
+                human645.selfIntroduction();
                 break;
             case 660:
                 break;
