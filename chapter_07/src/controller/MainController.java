@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Arrays;
 import java.util.List;
+import domain.service.Boy506;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -48,6 +49,12 @@ public class MainController {
             case 92:
                 break;
             case 506:
+
+                Boy506 boy = new Boy506(11);
+
+                boy.prologue();
+                boy.specialTraining();
+
                 break;
             case 617:
                 break;
