@@ -16,18 +16,15 @@ public class Boy506 {
     }
 
     public Boy506(String pName) {
-        name = pName;
-        age = DEFAULT_AGE;
+        this(pName, DEFAULT_AGE);
     }
 
     public Boy506(int pAge) {
-        name = DEFAULT_NAME;
-        age = pAge;
+        this(DEFAULT_NAME, pAge);
     }
 
     public Boy506() {
-        name = DEFAULT_NAME;
-        age = DEFAULT_AGE;
+        this(DEFAULT_NAME, DEFAULT_AGE);
     }
 
     public void prologue() {
