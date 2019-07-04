@@ -1,0 +1,12 @@
+@startuml
+class Boy506 {
+    -{static} final MIN_AGE = 0
+    -{static} final MAX_AGE = 100
+    -name
+    -age
+    +getName()
+    +setName()
+    +getAge()
+    +setAge()
+}
+@enduml
