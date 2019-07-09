@@ -1,12 +1,14 @@
 package domain.service;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Boy645 {
     static final String DEFAULT_NAME = "松平 元継";
     static final int DEFAULT_AGE = 10;
 
 
-
-    public void prologue(){
+    public void prologue() {
 
         System.out.println("あいててて…  ここはどこだ？");
         System.out.println("見たこともない所だ。うう、頭が痛い…");
@@ -47,6 +49,46 @@ public class Boy645 {
         System.out.println("猫ども「ニャアァァァ」");
         System.out.println("犬ども「ガルルーーー」");
         System.out.println("僕(争ってるようだけど早すぎて見えない…、でも、逃げるなら今のうちだ！)");
+
+    }
+
+
+
+    public void helpMe() {
+        String[] escape = new String[4];
+        escape[0] = " :僕「よし！真っ直ぐ走って逃げるぞ！";
+        escape[1] = " :僕「ゆっくり逃げよう」";
+        escape[2] = " :僕(ダメだ…怖くて動けない…。)";
+        escape[3] = " :その時！通りすがりの冒険者が登場！僕は助けてもらえたのであった。";
+
+       //選択肢に使う数字を被らないようランダムに使う方法が分かりません。
+        //この状態やと、１～４の数値を一つだけ取り出すので。。。
+        Random random = new Random();
+        int no = random.nextInt(4) + 1;
+
+
+        System.out.println("僕(何か逃げる方法を考えないと…。)");
+        for (int i = 0; i <= 1; ) {
+            System.out.println("強制終了する  d  ");
+            System.out.println("選択肢１～４を選択してください。");
+            System.out.println(no + escape[0]);
+            System.out.println(no + escape[1]);
+            System.out.println(no + escape[2]);
+            System.out.println(no + escape[3]);
+            Scanner sentakusi = new Scanner(System.in);
+
+         /* if(助かる選択肢){
+           助かった時の文
+
+         }
+          逃げれなかった時の文ともう一回選択肢を求める文
+          強制終了のパターン
+          バットエンド
+
+
+          */
+        }
+
 
     }
 
