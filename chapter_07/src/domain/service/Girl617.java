@@ -49,6 +49,7 @@ public class Girl617 {
         String num = new java.util.Scanner(System.in).next();
         int count = Integer.parseInt(num);
 
+        //int i = 0;
 
         for (int i = 0; i < count; i++) {
 
