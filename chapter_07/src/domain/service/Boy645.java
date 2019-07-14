@@ -53,44 +53,64 @@ public class Boy645 {
     }
 
 
-
     public void helpMe() {
-        String[] escape = new String[4];
-        escape[0] = " :僕「よし！真っ直ぐ走って逃げるぞ！";
-        escape[1] = " :僕「ゆっくり逃げよう」";
-        escape[2] = " :僕(ダメだ…怖くて動けない…。)";
-        escape[3] = " :その時！通りすがりの冒険者が登場！僕は助けてもらえたのであった。";
-
-       //選択肢に使う数字を被らないようランダムに使う方法が分かりません。
-        //この状態やと、１～４の数値を一つだけ取り出すので。。。
-        Random random = new Random();
-        int no = random.nextInt(4) + 1;
-
-
         System.out.println("僕(何か逃げる方法を考えないと…。)");
+
+        //ランダム添字の作成
         for (int i = 0; i <= 1; ) {
-            System.out.println("強制終了する  d  ");
-            System.out.println("選択肢１～４を選択してください。");
-            System.out.println(no + escape[0]);
-            System.out.println(no + escape[1]);
-            System.out.println(no + escape[2]);
-            System.out.println(no + escape[3]);
-            Scanner sentakusi = new Scanner(System.in);
+            int index1 = (int) (Math.random() * 4);
+            int index2 = (int) (Math.random() * 4);
+            int index3 = (int) (Math.random() * 4);
+            int index4 = (int) (Math.random() * 4);
 
-         /* if(助かる選択肢){
-           助かった時の文
+            //添字同士が同じにならない時、処理が進む
+            if (index1 != index2 && index1 != index3 && index1 != index4 && index2 != index3 && index2 != index4 && index3 != index4) {
 
-         }
-          逃げれなかった時の文ともう一回選択肢を求める文
-          強制終了のパターン
-          バットエンド
+                        //文言の入る文字列作成
+                        String[] escape = new String[4];
+                        escape[index1] = " :僕「よし！真っ直ぐ走って逃げるぞ！";
+                        escape[index2] = " :僕「ゆっくり逃げよう」";
+                        escape[index3] = " :僕(ダメだ…怖くて動けない…。)";
+                        escape[index4] = " :僕(助けてくれそうな人を探そう･･･。)";
+
+                        //文字入力の要求
+                        System.out.println("選択肢１～４を選択してください。   強制終了  d ");
+                        System.out.println((index1 +1) + escape[0]);
+                        System.out.println((index2 +1) + escape[1]);
+                        System.out.println((index3 +1) + escape[2]);
+                        System.out.println((index4 +1) + escape[3]);
+                        System.out.print("選択肢：");
+                        String sentakusi = new Scanner(System.in).next();
+
+                        switch (sentakusi){
+                            case "d":
+                                System.out.println("あなたは猫に引っかかれ、犬に噛まれて力尽きてしました。");
+                                System.out.println("おわり");
+                                boolean dieFlg = true;
+                                break;
+
+                          /*  case index4 ;
+                                System.out.println("その時！通りすがりの冒険者が登場！僕は助けてもらえたのであった。");
+                                System.out.println("おわり");
+                                break;
+                             */
+                            default:
+                                System.out.println("ダメだ！逃げれない！");
+
+                        }
 
 
-          */
+            }
         }
-
-
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
