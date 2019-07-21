@@ -54,58 +54,50 @@ public class Boy645 {
 
 
     public void helpMe() {
-        System.out.println("僕(何か逃げる方法を考えないと…。)");
+        // 初期設定 文言４パターンの用意
+        String[] escapeResult = new String[]{
+                "僕「よし！真っ直ぐ走って逃げるぞ！」\nダメだ！逃げれない！\n逃げれるタイミングを待とう・・・",
+                "僕「よし！ゆっくり逃げよう」\nダメだ！逃げれない！\n逃げれるタイミングを待とう・・・",
+                "僕(ダメだ…怖くて動けない…。)\nダメだ！逃げれない！\n逃げれるタイミングを待とう・・・",
+                "僕(助けてくれそうな人を探そう･･･。)\nその時！通りすがりの冒険者が登場！僕は助けてもらえたのであった。"
+        };
 
-        //ランダム添字の作成
-        for (int i = 0; i <= 1; ) {
-            int index1 = (int) (Math.random() * 4);
-            int index2 = (int) (Math.random() * 4);
-            int index3 = (int) (Math.random() * 4);
-            int index4 = (int) (Math.random() * 4);
+        //escapeResult[3]に謎の男の登場パターン
+        final int ROAD_TO_SAVE = 3;
 
-            //添字同士が同じにならない時、処理が進む
-            if (index1 != index2 && index1 != index3 && index1 != index4 && index2 != index3 && index2 != index4 && index3 != index4) {
+        //バッドエンド
+        String deadMessage = "声「どうやら、逃げ疲れて諦めたようだな。」\n僕（こうして、わけがわからないまま僕の人生は終りをむかえた…。）\n～ Bad End ～";
 
-                        //文言の入る文字列作成
-                        String[] escape = new String[4];
-                        escape[index1] = " :僕「よし！真っ直ぐ走って逃げるぞ！";
-                        escape[index2] = " :僕「ゆっくり逃げよう」";
-                        escape[index3] = " :僕(ダメだ…怖くて動けない…。)";
-                        escape[index4] = " :僕(助けてくれそうな人を探そう･･･。)";
+        // 逃亡処理
+        while (true) {
+            // メッセージと入力
+            System.out.println("----------------------------------------------------------------------------------");
+            System.out.println("早くここから逃げないと大変だ！！");
+            System.out.println("(任意の文字を入力してenterを押下してください。逃げるのを諦めるときは「d」を入力)：");
+            System.out.println("----------------------------------------------------------------------------------");
+            String input = new Scanner(System.in).next();
 
-                        //文字入力の要求
-                        System.out.println("選択肢１～４を選択してください。   強制終了  d ");
-                        System.out.println((index1 +1) + escape[0]);
-                        System.out.println((index2 +1) + escape[1]);
-                        System.out.println((index3 +1) + escape[2]);
-                        System.out.println((index4 +1) + escape[3]);
-                        System.out.print("選択肢：");
-                        String sentakusi = new Scanner(System.in).next();
+            // 終了(死亡)判定
+            if (input.toLowerCase().equals("d")) {
+                System.out.println(deadMessage);
+                return;
+            }
 
-                        switch (sentakusi){
-                            case "d":
-                                System.out.println("あなたは猫に引っかかれ、犬に噛まれて力尽きてしました。");
-                                System.out.println("おわり");
-                                boolean dieFlg = true;
-                                break;
+            // 運命の選択　ランダムで数字をdestinyに格納
+            Random rnd = new Random();
+            int destiny = rnd.nextInt(4);
 
-                          /*  case index4 ;
-                                System.out.println("その時！通りすがりの冒険者が登場！僕は助けてもらえたのであった。");
-                                System.out.println("おわり");
-                                break;
-                             */
-                            default:
-                                System.out.println("ダメだ！逃げれない！");
+            // 結果表示
+            System.out.println("僕の行動は…");
+            System.out.println(escapeResult[destiny]);
 
-                        }
-
-
+            // 助かる道　ランダムが３の場合おわる
+            if (destiny == ROAD_TO_SAVE) {
+                return;
             }
         }
     }
 }
-
-
 
 
 
