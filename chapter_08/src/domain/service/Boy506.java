@@ -10,45 +10,52 @@ public class Boy506 {
 
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public void setName(String pName) {
+    public void setName(String name) {
 
-        if (pName == null) {
-            System.out.println("引数が不正です");
+        if (isNullOrEmpty(name)) {
+            System.out.println("setName:引数が設定されていません");
             return;
         }
 
-        this.name = pName;
+        this.name = name;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
-    public void setAge(String pAge) {
+    public void setAge(String age) {
 
-        if (!isNum(pAge)) {
-            System.out.println("引数が不正です");
+        if (!isNum(age)) {
+            System.out.println("setAge:引数が数値ではありません");
             return;
         }
 
-        if (Integer.parseInt(pAge) < MIN_AGE || Integer.parseInt(pAge) > MAX_AGE) {
-            System.out.println("引数が不正です");
+        int ageNum = Integer.parseInt(age);
+
+        if (ageNum < MIN_AGE || ageNum > MAX_AGE) {
+            System.out.println("setAge:引数が範囲外(0-100)です");
             return;
         }
 
-        this.age = Integer.parseInt(pAge);
+        this.age = ageNum;
     }
 
-    static boolean isNum(String number) {
+    private boolean isNum(String number) {
         try {
             Integer.parseInt(number);
             return true;
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    private boolean isNullOrEmpty(String string) {
+
+        return string == null || string.isEmpty();
     }
 
 }

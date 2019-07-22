@@ -52,8 +52,8 @@ public class MainController {
 
                 Boy506 boy = new Boy506();
 
-                boy.setName("堀井 達記");
-                boy.setAge("あ");
+                boy.setName("");
+                boy.setAge("1");
 
                 System.out.println("私の名前は" + boy.getName() + "です。");
                 System.out.println("年齢は" + boy.getAge() + "歳です。");
