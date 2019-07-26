@@ -77,21 +77,21 @@ public class Boy645 {
             System.out.println("----------------------------------------------------------------------------------");
             String input = new Scanner(System.in).next();
 
-            // 終了(死亡)判定
+            // 入力値がdの場合
             if (input.toLowerCase().equals("d")) {
                 System.out.println(deadMessage);
                 return;
             }
 
-            // 運命の選択　ランダムで数字をdestinyに格納
+            // ランダムで４より低い数字をdestinyに格納
             Random rnd = new Random();
             int destiny = rnd.nextInt(4);
 
-            // 結果表示
+            // 配列からdestiny番目の文言を表示
             System.out.println("僕の行動は…");
             System.out.println(escapeResult[destiny]);
 
-            // 助かる道　ランダムが３の場合おわる
+            // 謎の男登場パータンのみ、おわる
             if (destiny == ROAD_TO_SAVE) {
                 return;
             }
