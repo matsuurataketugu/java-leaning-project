@@ -50,10 +50,13 @@ public class MainController {
                 break;
             case 506:
 
-                Boy506 boy = new Boy506(11);
+                Boy506 boy = new Boy506();
 
-                boy.prologue();
-                boy.specialTraining();
+                boy.setName("");
+                boy.setAge("1");
+
+                System.out.println("私の名前は" + boy.getName() + "です。");
+                System.out.println("年齢は" + boy.getAge() + "歳です。");
 
                 break;
             case 617:
