@@ -3,7 +3,7 @@ package controller;
 import java.util.Arrays;
 import java.util.List;
 import domain.service.Boy506;
-import domain.service.Girl617;
+import domain.service.Boy645;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -58,14 +58,13 @@ public class MainController {
 
                 break;
             case 617:
-
-                Girl617 girl = new Girl617(11);
-
-                girl.prologue();
-                girl.research();
-
                 break;
             case 645:
+                Boy645 dogcat = new Boy645(11);
+
+                dogcat.prologue();
+                dogcat.helpMe();
+
                 break;
             case 660:
                 break;
