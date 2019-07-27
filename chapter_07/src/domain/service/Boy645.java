@@ -7,7 +7,7 @@ public class Boy645 {
     static final String DEFAULT_NAME = "松平 元継";
     static final int DEFAULT_AGE = 10;
 
-    static final String LAST_KEY = "q";
+    static final String LAST_escape = "d";
 
     public String name = "";
     public int age = 0;
@@ -94,10 +94,10 @@ public class Boy645 {
             System.out.println("早くここから逃げないと大変だ！！");
             System.out.println("(任意の文字を入力してenterを押下してください。逃げるのを諦めるときは「d」を入力)：");
             System.out.println("----------------------------------------------------------------------------------");
-            String input = new Scanner(System.in).next();
+            String end = new Scanner(System.in).next();
 
             // 入力値がdの場合
-            if (input.toLowerCase().equals("d")) {
+            if (LAST_escape.toLowerCase().equals(end)) {
                 System.out.println(deadMessage);
                 return;
             }
