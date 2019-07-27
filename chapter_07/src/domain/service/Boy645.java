@@ -7,6 +7,25 @@ public class Boy645 {
     static final String DEFAULT_NAME = "松平 元継";
     static final int DEFAULT_AGE = 10;
 
+    static final String LAST_KEY = "q";
+
+    public String name = "";
+    public int age = 0;
+
+    public Boy645(String aName, int aAge) {
+        name = aName;
+        age = aAge;
+    }
+
+    public Boy645(String pName) {
+        this(pName, DEFAULT_AGE);
+    }
+    public Boy645(int pAge) {
+        this(DEFAULT_NAME, pAge);
+    }
+    public Boy645() {
+        this(DEFAULT_NAME, DEFAULT_AGE);
+    }
 
     public void prologue() {
 
@@ -23,7 +42,7 @@ public class Boy645 {
         System.out.println("謎の声Ａ「おい、小僧、名を言え。」");
         System.out.println("僕(え？猫？？猫が喋ってる！)");
         System.out.println("猫Ｂ「名前を言えって言ってんだろ！！」");
-        System.out.println("僕「ひぃぃ、" + DEFAULT_NAME + "です！」(ぽわわ～ん)");
+        System.out.println("僕「ひぃぃ、" + this.name + "です！」(ぽわわ～ん)");
         System.out.println("猫Ａ「定着したぞ。」");
         System.out.println("猫Ｂ「よし、じゃあ死ね。」(ジャキッ！)");
         System.out.println("僕(え？)");
@@ -38,7 +57,7 @@ public class Boy645 {
         System.out.println("猫Ｂ「クソがっ！」(犬に飛びかかる)");
         System.out.println("犬Ｃ「おっと！２人相手はきついから早くしろよ！」(猫ＡＢの攻撃を防ぐ)");
         System.out.println("犬Ｄ「なぁ、年を言えば助けてやるって！」");
-        System.out.println("僕「助けて、" + DEFAULT_AGE + "歳です！」(ぽわわ～ん)");
+        System.out.println("僕「助けて、" + this.age + "歳です！」(ぽわわ～ん)");
         System.out.println("犬Ｄ「よっし、ＯＫだ！ガルルル！」(僕に飛びかかってくる)");
         System.out.println("猫Ｂ「させるかっ！」(犬Ｄに割って入る)");
         System.out.println("犬Ｄ「・・・・」(ビキビキ)");
