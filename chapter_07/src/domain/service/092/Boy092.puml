@@ -1,0 +1,10 @@
+@startuml
+class Boy092 {
+    -{static} final DEFAULT_NAME = "金田 進ノ介"
+    -{static} final DEFAULT_AGE = 10
+    -name
+    -age
+    +prologue()
+    +getAlongWellWithGirls()
+}
+@enduml
