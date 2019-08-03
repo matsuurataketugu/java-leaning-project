@@ -2,6 +2,8 @@ package controller;
 
 import java.util.Arrays;
 import java.util.List;
+
+import domain.service.Boy092;
 import domain.service.Boy506;
 import domain.service.Boy645;
 import domain.service.Girl617;
@@ -49,6 +51,9 @@ public class MainController {
 
         switch (employeeId) {
             case 92:
+                Boy092 boy092 = new Boy092("金田一 康介", 12);
+                boy092.prologue();
+                boy092.getAlongWellWithGirls();
                 break;
             case 506:
 
