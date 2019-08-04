@@ -1,0 +1,25 @@
+@startuml
+class Boy645 {
+    -{static} final String DEFAULT_NAME = "松平 元継"
+    -{static} final int DEFAULT_AGE = 10
+    -{static} final int MIN_AGE = 0
+    -{static} final int MAX_AGE = 100
+    -String name
+    -int age
+    +getName()
+    +setName()
+    +getAge()
+    +setAge()
+    +prologue()
+    +helpMe()
+}
+class HighSchoolBoy645 {
+    -String equipment
+    +getEquipment()
+    +setEquipment()
+    +rememberMyDream()
+    +run()
+    +boast()
+}
+Boy645 <|.. HighSchoolBoy645
+@enduml
