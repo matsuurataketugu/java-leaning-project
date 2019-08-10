@@ -1,6 +1,7 @@
 package controller;
 
 import domain.service.student092.HighSchoolBoy092;
+import domain.service.student506.HighSchoolBoy506;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,6 +52,13 @@ public class MainController {
                 HighSchoolBoy092 highSchoolBoy092 = new HighSchoolBoy092();
                 break;
             case 506:
+
+                HighSchoolBoy506 HighSchoolBoy506 = new HighSchoolBoy506();
+
+                HighSchoolBoy506.rememberMyDream();
+                HighSchoolBoy506.specialTraining();
+                HighSchoolBoy506.boast();
+
                 break;
             case 617:
                 break;
