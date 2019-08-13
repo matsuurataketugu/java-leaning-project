@@ -29,7 +29,14 @@ public class HighSchoolBoy506 extends Boy506{
         int totalGoal = 0;
         int shootOff = 0;
 
-        System.out.println("何本フリーキック練習する？");
+        boolean flg1 = false;
+        boolean flg2 = false;
+        boolean flg3 = false;
+        boolean flg4 = false;
+
+        System.out.println("フリーキックでストラックアウトだ");
+        System.out.println("1から4の的にすべて当てればパーフェクト");
+        System.out.println("何本シュートする？");
 
         String num = new java.util.Scanner(System.in).next();
         int shootNum = Integer.parseInt(num);
@@ -45,27 +52,34 @@ public class HighSchoolBoy506 extends Boy506{
             }
 
             java.util.Random rnd = new java.util.Random();
-            int result = rnd.nextInt(4);
+            int result = rnd.nextInt(5);
 
             if (result == 0) {
-                System.out.println("ゴール！");
-                totalGoal++;
+                System.out.println("枠外！");
             } else if (result == 1) {
-                System.out.println("惜しい!ポスト");
-                shootOff++;
+                System.out.println("1番あたり");
+                flg1 = true;
             } else if (result == 2) {
-                System.out.println("残念!壁に当たった");
-                shootOff++;
-            } else {
-                System.out.println("残念!枠外");
-                shootOff++;
+                System.out.println("2番あたり");
+                flg2 = true;
+            } else if (result == 3) {
+                System.out.println("3番あたり");
+                flg3 = true;
+            } else if (result == 4) {
+                System.out.println("4番あたり");
+                flg4 = true;
             }
         }
 
-        System.out.println("ゴール数：" + totalGoal);
-        System.out.println("枠外シュート数：" + shootOff);
-
         System.out.println("シュート練習終わり");
+
+        // FLGが全部trueならパーフェクト
+        if (flg1 && flg2 && flg3 && flg4) {
+            System.out.println("パーフェクト！");
+        } else {
+            System.out.println("残念。パーフェクトならず。");
+        }
+
     }
 
     public void boast() {
