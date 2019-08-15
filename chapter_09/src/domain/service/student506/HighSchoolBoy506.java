@@ -25,7 +25,7 @@ public class HighSchoolBoy506 extends Boy506{
 
     }
 
-    public void highSchoolSpecialTraining() {
+    private void highSchoolSpecialTraining() {
         int totalGoal = 0;
         int shootOff = 0;
 
