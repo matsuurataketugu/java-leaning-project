@@ -5,6 +5,7 @@ import java.util.List;
 
 import domain.service.Boy092;
 import domain.service.Boy506;
+import domain.service.Boy645;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -107,6 +108,14 @@ public class MainController {
             case 617:
                 break;
             case 645:
+                Boy645 nameage = new Boy645();
+
+                nameage.setName("まつ");
+                nameage.setAge(26);
+
+                System.out.println("私の名前は" + nameage.getName() + "です。");
+                System.out.println("年齢は" + nameage.getAge() + "です。");
+
                 break;
             case 660:
                 break;
