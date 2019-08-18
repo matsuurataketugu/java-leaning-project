@@ -5,6 +5,7 @@ import java.util.List;
 
 import domain.service.Boy092;
 import domain.service.Boy506;
+import domain.service.Boy645;
 import domain.service.Girl617;
 
 public class MainController {
@@ -116,6 +117,14 @@ public class MainController {
 
                 break;
             case 645:
+                Boy645 nameage = new Boy645();
+
+                nameage.setName("まつ");
+                nameage.setAge(26);
+
+                System.out.println("私の名前は" + nameage.getName() + "です。");
+                System.out.println("年齢は" + nameage.getAge() + "です。");
+
                 break;
             case 660:
                 break;
