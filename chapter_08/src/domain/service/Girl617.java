@@ -2,8 +2,8 @@ package domain.service;
 
 public class Girl617 {
 
-    static final int MIN_AGE = 0;
-    static final int MAX_AGE = 100;
+    private final int MIN_AGE = 0;
+    private final int MAX_AGE = 100;
 
     private String name = "";
     private int age = 0;
