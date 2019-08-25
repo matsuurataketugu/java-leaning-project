@@ -2,6 +2,7 @@ package controller;
 
 import domain.service.student092.HighSchoolBoy092;
 import domain.service.student506.HighSchoolBoy506;
+import domain.service.student617.HighSchoolGirl617;
 
 import java.util.Arrays;
 import java.util.List;
@@ -61,7 +62,13 @@ public class MainController {
 
                 break;
             case 617:
+                HighSchoolGirl617 HighSchoolGirl617 = new HighSchoolGirl617();
+
+                HighSchoolGirl617.rememberMyDream();
+                HighSchoolGirl617.research();
+                HighSchoolGirl617.recommended();
                 break;
+
             case 645:
                 break;
             case 660:
