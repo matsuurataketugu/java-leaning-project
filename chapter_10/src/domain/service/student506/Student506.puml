@@ -1,0 +1,49 @@
+@startuml
+
+interface ITask {
+    +void run()
+}
+abstract class ATask {
+}
+interface ILife {
+    +void story()
+    +boolean scene()
+    +void epilogue()
+}
+abstract class ALife {
+}
+class MyLife {
+}
+abstract class Player {
+    -String name
+    -int offensivePower
+    -int defensivePower
+    +String getName()
+    +void setName(String name)
+    +int getOffensivePower()
+    +void setOffensivePower(int power)
+    +int getDefensivePower()
+    +void setDefensivePower(int power)
+    +abstract boolean skill()
+}
+class Kicker {
+}
+class Keeper {
+}
+ITask <|-- ATask
+ILife <|-- ALife
+ALife <|-- MyLife
+Player <|-- Kicker
+Player <|-- Keeper
+
+class AnEvent {
+    +{static} int GoddessOfVictory()
+    +{static} bool FatefulMischief()
+}
+
+enum LuckOfTime {
+    Goddess_of_Victory
+    Fateful_Mischief
+}
+
+@enduml
