@@ -68,7 +68,6 @@ public class MainController {
                 HighSchoolBoy645 HighSchoolBoy645 = new HighSchoolBoy645();
                 HighSchoolBoy645.rememberMyDream();
                 HighSchoolBoy645.run();
-                HighSchoolBoy645.boast();
 
                 break;
             case 660:
