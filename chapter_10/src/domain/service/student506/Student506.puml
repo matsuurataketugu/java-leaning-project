@@ -3,7 +3,7 @@
 interface ITask {
     +void run()
 }
-abstract class ATask {
+abstract class MyTask {
 }
 interface ILife {
     +void story()
@@ -30,7 +30,7 @@ class Kicker {
 }
 class Keeper {
 }
-ITask <|-- ATask
+ITask <|-- MyTask
 ILife <|-- ALife
 ALife <|-- MyLife
 Player <|-- Kicker
