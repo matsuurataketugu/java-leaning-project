@@ -1,0 +1,50 @@
+@startuml
+
+interface ITask {
+    +void run()
+}
+class MyTask {
+}
+ITask <|-- MyTask
+
+interface IAdventure {
+    +void story()
+    +void training()
+}
+abstract class AAdventure {
+}
+class MyAdventure {
+}
+IAdventure <|-- AAdventure
+AAdventure <|-- MyAdventure
+
+interface IAnimal {
+    void attack()
+    void run()
+}
+interface IHuman extends IAnimal {
+    void guard()
+    void skill()
+}
+
+abstract class Creature implements IAnimal {
+    int life
+    int offense
+    int defense
+}
+abstract class Hero extends Creature implements IHuman {
+    String name
+    int mana
+}
+class Bird extends Creature implements IAnimal {
+    String name
+    int mana
+}
+class BeginnerHero {
+}
+class VeteranHero {
+}
+Hero <|-- BeginnerHero
+Hero <|-- VeteranHero
+
+@enduml

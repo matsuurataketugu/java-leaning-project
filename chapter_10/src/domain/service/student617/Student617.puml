@@ -6,6 +6,7 @@ interface ITask {
 class MyTask {
 }
 ITask <|-- MyTask
+
 interface IJob {
     +void story()
     +void meeting(int id)
@@ -17,6 +18,7 @@ class MyJob {
 }
 IJob <|-- AJob
 AJob <|-- MyJob
+
 abstract ATour {
     -int id
     -String area
