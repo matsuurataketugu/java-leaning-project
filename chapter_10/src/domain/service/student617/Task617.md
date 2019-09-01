@@ -28,3 +28,7 @@ pumlファイルにあるクラスを作成せよ。
     * hearing: その他事項をヒアリングする。(コマンドプロンプトから任意の内容を入力させて、それをremarkに格納する)
     * toString: ツアー詳細を表示する。(id～remarkまでの内容を表示する。idは旅行会社の名称に変換する)
 7. TravelAgencyは旅行会社の列挙型
+
+## 課題２
+作成したクラスをMainController.makeCharacterのCaseに実装してインスタンス化する。  
+定義はITaskインタフェース型で行い、runメソッドで実行すること。  
