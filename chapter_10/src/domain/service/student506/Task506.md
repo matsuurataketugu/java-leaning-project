@@ -9,7 +9,10 @@
 
 ## 課題１
 pumlファイルにあるクラスを作成せよ。  
-仕様は以下の通りとする。  
+仕様は以下の通りとする。
+* ITask
+1. Controllerから呼び出すインターフェース
+2. runメソッドから下記の処理が呼び出される  
 * LuckOfTime: 列挙型
 1. Goddess_of_Victory: 勝利の女神イベント発生
 2. Fateful_Mischief: 運命の悪戯イベント発生

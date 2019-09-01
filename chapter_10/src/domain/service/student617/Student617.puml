@@ -1,0 +1,49 @@
+@startuml
+
+interface ITask {
+    +void run()
+}
+class MyTask {
+}
+ITask <|-- MyTask
+interface IJob {
+    +void story()
+    +void meeting(int id)
+    +void confirm(int id)
+}
+abstract class AJob {
+}
+class MyJob {
+}
+IJob <|-- AJob
+AJob <|-- MyJob
+abstract ATour {
+    -int id
+    -String area
+    -String country
+    -String mainSpot
+    -Date scheduleFrom
+    -Date scheduleTo
+    -int userCount
+    -String remark
+    +constructor(int id, String area, String country, String mainSpot, Date scheduleFrom, Date scheduleTo, int userCount)
+    +hearing()
+    +toString()
+}
+class HisTour {
+}
+class JtbTour {
+}
+class ExpediaTour {
+}
+ATour <|-- HisTour
+ATour <|-- JtbTour
+ATour <|-- ExpediaTour
+
+enum TravelAgency {
+HIS
+JTB
+Expedia
+}
+
+@enduml
