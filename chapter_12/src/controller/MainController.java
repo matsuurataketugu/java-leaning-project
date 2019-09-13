@@ -69,10 +69,6 @@ public class MainController {
         task.task1();
         information("２");
         task.task2();
-        information("３");
-        task.task3();
-        information("４");
-        task.task4();
     }
 
     private static void information(String taskNumber) {
