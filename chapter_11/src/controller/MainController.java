@@ -63,7 +63,8 @@ public class MainController {
                 throw new NullPointerException(employeeId + "さんのクラスは存在しません。");
         }
     }
-    private static void runTask(ITask task){
+
+    private static void runTask(ITask task) {
         information("１");
         task.task1();
         information("２");
@@ -73,6 +74,7 @@ public class MainController {
         information("４");
         task.task4();
     }
+
     private static void information(String taskNumber) {
         System.out.println("-------------------");
         System.out.println("課題" + taskNumber + "の確認");
