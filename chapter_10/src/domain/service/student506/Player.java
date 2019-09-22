@@ -6,6 +6,8 @@ abstract class Player {
     int offensivePower = 0;
     int defensivePower = 0;
 
+
+
     public String getName() {
         return this.name;
     }

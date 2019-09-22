@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Arrays;
 import java.util.List;
+import domain.service.student506.ITask;
 import domain.service.student506.MyTask;
 
 public class MainController {
@@ -50,7 +51,7 @@ public class MainController {
                 break;
             case 506:
 
-                MyTask task = new MyTask();
+                ITask task = new MyTask();
                 task.run();
 
                 break;

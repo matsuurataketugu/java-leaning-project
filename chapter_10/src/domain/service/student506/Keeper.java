@@ -2,16 +2,16 @@ package domain.service.student506;
 
 public class Keeper extends Player {
 
+    public Keeper(int offensivePower, int defensivePower) {
+        this.offensivePower = offensivePower;
+        this.defensivePower = defensivePower;
+    }
+
     public boolean skill() {
 
-        java.util.Random rnd = new java.util.Random();
-        int result = rnd.nextInt(1);
+        this.defensivePower = this.defensivePower * 2;
 
-        if (result == 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return true;
 
     }
 }
