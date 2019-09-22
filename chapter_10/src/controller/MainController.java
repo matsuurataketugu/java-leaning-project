@@ -2,6 +2,8 @@ package controller;
 
 import java.util.Arrays;
 import java.util.List;
+import domain.service.student506.ITask;
+import domain.service.student506.MyTask;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -48,6 +50,10 @@ public class MainController {
             case 92:
                 break;
             case 506:
+
+                ITask task = new MyTask();
+                task.run();
+
                 break;
             case 617:
                 break;
