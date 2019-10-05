@@ -2,15 +2,16 @@ package domain.service.student506;
 
 import domain.service.ITask;
 
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+
 
 public class Task506 implements ITask {
     @Override
     public void task1() {
 
         String s = null;
-        System.out.println(s.length());
+        //System.out.println(s.length());
 
     }
 
@@ -31,11 +32,10 @@ public class Task506 implements ITask {
     @Override
     public void task3() {
 
-        String s = "3";
-        int number = 0;
+        String s = "三";
 
         try {
-            Integer.parseInt(s);
+            int number = Integer.parseInt(s);
         } catch(NumberFormatException e) {
             e.printStackTrace();
         }
@@ -44,8 +44,14 @@ public class Task506 implements ITask {
 
     @Override
     public void task4() {
+        try {
 
-        File inputFile = new File( "あいうえお" );
+            FileReader in = new FileReader("data.txt");
+
+        } catch (FileNotFoundException e) {
+
+            e.printStackTrace();
+        }
 
     }
 }
