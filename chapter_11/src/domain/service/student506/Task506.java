@@ -46,7 +46,7 @@ public class Task506 implements ITask {
     public void task4() {
         try {
 
-            FileReader in = new FileReader("data.txt");
+            throw new FileNotFoundException();
 
         } catch (FileNotFoundException e) {
 
