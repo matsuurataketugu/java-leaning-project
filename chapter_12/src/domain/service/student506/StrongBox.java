@@ -1,13 +1,16 @@
 package domain.service.student506;
 
-import java.util.HashMap;
-import java.util.Map;
 
-public class StrongBox {
-    public static void main(String[] args) {
+public class StrongBox<T> {
 
-        Map<String, String> map1 = new HashMap<>();
+    private T value;
 
+    public void put(T arg){
+        this.value = arg;
     }
+    public T get(){
+        return this.value;
+    }
+
 
 }
