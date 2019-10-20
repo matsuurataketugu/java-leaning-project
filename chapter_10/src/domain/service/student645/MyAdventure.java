@@ -1,4 +1,4 @@
 package domain.service.student645;
 
-public class MyAdventure {
+public class MyAdventure extends AAdventure {
 }

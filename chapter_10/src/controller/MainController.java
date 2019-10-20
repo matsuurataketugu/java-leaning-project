@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import domain.service.student506.ITask;
 import domain.service.student506.MyTask;
+import domain.service.student645.ITask645;
+import domain.service.student645.MyTask645;
 
 public class MainController {
     private static final int EXIT_PROCESS = 999;
@@ -58,6 +60,9 @@ public class MainController {
             case 617:
                 break;
             case 645:
+                ITask645 dorakue = new MyTask645();
+                dorakue.run();
+
                 break;
             case 660:
                 break;

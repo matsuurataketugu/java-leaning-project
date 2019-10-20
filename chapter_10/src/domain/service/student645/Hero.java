@@ -1,6 +1,74 @@
 package domain.service.student645;
 
-public abstract class Hero extends Creature implements IHuman {
-    String name;
-    int mana;
+public class Hero extends Creature implements IHuman {
+
+    @Override
+    public void guard() {
+        return;
+    }
+
+    @Override
+    public void skill() {
+        return;
+    }
+
+    @Override
+    public void attack() {
+        super.attack();
+    }
+
+    @Override
+    public void run() {
+        super.run();
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+    }
+
+    @Override
+    public int getMana() {
+        return super.getMana();
+    }
+
+    @Override
+    public void setMana(int mana) {
+        super.setMana(mana);
+    }
+
+    @Override
+    public int getLife() {
+        return super.getLife();
+    }
+
+    @Override
+    public void setLife(int life) {
+        super.setLife(life);
+    }
+
+    @Override
+    public int getOffense() {
+        return super.getOffense();
+    }
+
+    @Override
+    public void setOffense(int offense) {
+        super.setOffense(offense);
+    }
+
+    @Override
+    public int getDefense() {
+        return super.getDefense();
+    }
+
+    @Override
+    public void setDefense(int defense) {
+        super.setDefense(defense);
+    }
 }
