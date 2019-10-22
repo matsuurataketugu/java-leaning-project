@@ -7,8 +7,18 @@ public class MyTask implements ITask{
 
         IJob myJob = new MyJob();
         myJob.story();
-        myJob.meeting();
-        myJob.confirm();
+
+        //HIS
+        myJob.meeting(TravelAgency.HIS.ordinal());
+        myJob.confirm(TravelAgency.HIS.ordinal());
+
+        //JTB
+        myJob.meeting(TravelAgency.JTB.ordinal());
+        myJob.confirm(TravelAgency.JTB.ordinal());
+
+        //Expedia
+        myJob.meeting(TravelAgency.Expedia.ordinal());
+        myJob.confirm(TravelAgency.Expedia.ordinal());
 
     }
 }

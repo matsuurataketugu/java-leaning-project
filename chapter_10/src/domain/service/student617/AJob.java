@@ -1,6 +1,6 @@
 package domain.service.student617;
 
-abstract public class AJob implements MyJob{
+public abstract class AJob implements IJob{
 
     public void story() {
 
@@ -11,17 +11,21 @@ abstract public class AJob implements MyJob{
         System.out.println("今日も３社とツアーに関する打ち合わせを控えている。");
         System.out.println("そろそろ打ち合わせの準備をしないと！");
 
+        return;
+
     }
 
-    public void meeting() {
+    public void meeting(int id) {
 
         System.out.println("13:30になりました。");
         System.out.println("HIS様、JTB様、Expedia様お揃いですね。");
         System.out.println("それでは、3社合同打ち合わせを始めます。");
 
+        return;
+
     }
 
-    public void confirm() {
+    public void confirm(int id) {
 
         System.out.println("HIS社は思い切りハワイの自然を楽しむツアー内容ですね。");
         System.out.println("早朝のハイキングからダイビング、バナナボート、ナイトサファリまで自然満喫ですね！");
@@ -29,6 +33,8 @@ abstract public class AJob implements MyJob{
         System.out.println("免税店、アウトレットと日本では高いものを海外で安くゲットしようというものですね！");
         System.out.println("Expedia社はインスタ映えスポット巡りの内容ですね。");
         System.out.println("ウォールアート、ハワイの美味しい可愛い食べ物屋さんを巡るというものですね！");
+
+        return;
 
     }
 

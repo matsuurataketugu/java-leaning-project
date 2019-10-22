@@ -4,11 +4,4 @@ public interface ITask {
 
     void run();
 
-    public enum TravelAgency {
-        HIS,
-        JTB,
-        Expedia
-
-      }
-
 }

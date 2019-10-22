@@ -2,7 +2,15 @@ package domain.service.student617;
 
 import java.util.Scanner;
 
-abstract public class ATour {
+public abstract class ATour {
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
 
     public enum id {
      //HIS
