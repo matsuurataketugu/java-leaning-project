@@ -10,23 +10,15 @@ public class Task506 implements ITask {
 
         return s.matches(".*");
 
-        //return false;
     }
 
     @Override
     public boolean task2(String s) {
 
-        String pattern = "^A[0-9]{2}";
+        String pattern = "^A[0-9]{1,2}$";
         Pattern p = Pattern.compile(pattern);
 
-        String pattern2 = "^A[0-9]";
-        Pattern p2 = Pattern.compile(pattern);
-
         if(p.matcher(s).find()){
-            return true;
-        }
-
-        if(p2.matcher(s).find()){
             return true;
         }
 
