@@ -11,6 +11,6 @@ public class HisTour  extends ATour{
                       Date scheduleTo,
                       int userCount,
                       String remark){
-               super(id, area, country, mainSpot, scheduleFrom, scheduleTo, userCount, remark);
+                      super(id, area, country, mainSpot, scheduleFrom, scheduleTo, userCount, remark);
     }
 }

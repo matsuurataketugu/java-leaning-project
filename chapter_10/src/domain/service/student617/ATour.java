@@ -47,7 +47,6 @@ public abstract class ATour {
     }
 
     public void toString{
-
         System.out.println("JTB");
         System.out.println("提案する国はhawaii。");
         System.out.println("アメリカの一部である");

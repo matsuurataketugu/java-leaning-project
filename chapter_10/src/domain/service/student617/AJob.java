@@ -14,7 +14,6 @@ public abstract class AJob implements IJob{
         return;
 
     }
-
     public void meeting(int id) {
 
         System.out.println("13:30になりました。");
@@ -24,7 +23,6 @@ public abstract class AJob implements IJob{
         return;
 
     }
-
     public void confirm(int id) {
 
         System.out.println("HIS社は思い切りハワイの自然を楽しむツアー内容ですね。");
