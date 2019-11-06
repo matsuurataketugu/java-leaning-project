@@ -2,15 +2,15 @@ package domain.service.student645;
 
 public class Bird extends Creature {
     @Override
-    public void attack() {
-        System.out.println("鳥は激しくクチバシでつついてきた");
-        super.attack();
+    public int attack() {
+        int ATK = super.getOffense() ;
+        return ATK;
     }
 
     @Override
-    public void run() {
-        System.out.println("鳥は飛んで逃げていった");
-//        super.run();
+    public int run() {
+
+      return super.run();
     }
 
     @Override

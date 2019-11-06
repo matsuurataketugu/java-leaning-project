@@ -5,60 +5,33 @@ import java.util.Random;
 public class BeginnerHero extends Hero {
 
     @Override
-    public void guard() {
-        System.out.println("マツは守理の体制になった！");
-        System.out.println("防御力が上がった");
-//        super.guard();
+    public int guard() {
+        //防御を高める
+      int DEF = super.getDefense() + 20;
+      super.setDefense(DEF);
+
+      return DEF;
     }
 
     @Override
-    public void skill() {
-        System.out.println("マツは呪文を唱えた");
-//        super.skill();
+    public int skill() {
+        //敵の防御無視で全体ダメージ
+       int SKILL = super.getOffense() ;
+       return SKILL;
     }
 
     @Override
-    public void attack() {
+    public int attack() {
 
-        System.out.println("マツの攻撃　");
+        int ATK = super.getOffense() ;
 
-        //攻撃力
-        int ATK = getOffense();
-
-        //ランダム　敵のどちらかHPを減らす  1はベテラン 2は鳥
-        Random rnd = new Random();
-        int enemy = rnd.nextInt(2);
-        if(enemy ==1){
-            VeteranHero enemyA = new VeteranHero();
-
-            //攻撃前の敵HP
-            int EnemyHpBofore = enemyA.getLife();
-
-            //攻撃後の敵HP
-            int EnemyHpAfter = EnemyHpBofore - ATK;
-
-            //減ったHPをセッターで戻す
-                enemyA.setLife(EnemyHpAfter);
-
-            System.out.println("ベテランさんに" + ATK + "ダメージ与えた");
-            System.out.println("残り　ベテランさんHP" + EnemyHpAfter );
-        }else{
-            Bird enemyB = new Bird();
-            int EnemyHpBofore = enemyB.getLife();
-            int EnemyHpAfter = EnemyHpBofore - ATK;
-            enemyB.setLife(EnemyHpAfter);
-            System.out.println("カラアゲくんに" + ATK + "ダメージ与えた");
-            System.out.println("残り　カアラゲくんHP" + EnemyHpAfter );
-
-        }
-
-
-
+        return ATK;
     }
 
     @Override
-    public void run() {
+    public int run() {
         System.out.println("ここに独自の処理を書く");
+        return 0;
 
 
 //        super.run();

@@ -2,27 +2,31 @@ package domain.service.student645;
 
 public class VeteranHero extends Hero {
     @Override
-    public void guard() {
-        System.out.println("ベテランヒーローは守る体制になった");
-//        super.guard();
+    public int guard() {
+        int DEF = super.getDefense() + 20;
+        super.setDefense(DEF);
+
+        return DEF;
     }
 
     @Override
-    public void skill() {
-        System.out.println("ベテランヒーローは呪文を唱えた");
-//        super.skill();
+    public int skill() {
+        // ここに独自の処理を書く
+        return super.skill();
     }
 
     @Override
-    public void attack() {
-        System.out.println("ベテランヒーローの攻撃");
-//        super.attack();
+    public int attack() {
+
+        int ATK = super.getOffense() ;
+
+        return ATK;
     }
 
     @Override
-    public void run() {
-        System.out.println("ベテランヒーローは戦闘から離脱した");
-//        super.run();
+    public int run() {
+        // ここに独自の処理を書く
+        return super.run();
     }
 
     @Override

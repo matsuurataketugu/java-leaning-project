@@ -1,20 +1,22 @@
 package domain.service.student645;
 
+import java.util.Random;
+
 public abstract class Creature implements IAnimal {
-    public String name;
-    public int life;
-    public int mana;
-    public int offense;
-    public int defense;
+    private String name;
+    private int life;
+    private int mana;
+    private int offense;
+    private int defense;
 
     @Override
-    public void attack() {
-        return;
+    public int attack() {
+        return new Random().nextInt(10) + 1;
     }
 
     @Override
-    public void run() {
-        return;
+    public int run() {
+        return 0;
     }
 
     public String getName() {
@@ -32,6 +34,7 @@ public abstract class Creature implements IAnimal {
     public void setMana(int mana) {
         this.mana = mana;
     }
+
     public int getLife() {
         return life;
     }

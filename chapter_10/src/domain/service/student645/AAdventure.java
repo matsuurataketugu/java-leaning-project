@@ -11,26 +11,33 @@ public abstract class AAdventure implements IAdventure {
 
 
     public AAdventure() {
+
         this.beginnerHero = new BeginnerHero();
-        this.beginnerHero.name = "マツ";
-        this.beginnerHero.life = 120;
-        this.beginnerHero.mana = 50;
-        this.beginnerHero.offense = 100;
-        this.beginnerHero.defense = 60;
+        this.beginnerHero.setName("マツ");
+        this.beginnerHero.setLife(120);
+        this.beginnerHero.setMana(50);
+        this.beginnerHero.setOffense(100);
+        this.beginnerHero.setDefense(60);
 
         this.veteranHero = new VeteranHero();
-        this.veteranHero.name = "ベテランさん";
-        this.veteranHero.life = 200;
-        this.veteranHero.mana = 100;
-        this.veteranHero.offense = 120;
-        this.veteranHero.defense = 30;
+        this.veteranHero.setName("ベテランさん");
+        this.veteranHero.setLife(200);
+        this.veteranHero.setMana(100);
+        this.veteranHero.setOffense(120);
+        this.veteranHero.setDefense(30);
 
         this.bird = new Bird();
-        this.bird.name = "カラアゲくん";
-        this.bird.life = 50;
-        this.bird.mana = 50;
-        this.bird.offense = 20;
-        this.bird.defense = 10;
+        this.bird.setName("相棒の鳥");
+        this.bird.setLife(50);
+        this.bird.setMana(50);
+        this.bird.setOffense(20);
+        this.bird.setDefense(10);
+    }
+
+    public AAdventure(BeginnerHero beginnerHero, VeteranHero veteranHero, Bird bird) {
+        this.beginnerHero = beginnerHero;
+        this.veteranHero = veteranHero;
+        this.bird = bird;
     }
 
 
@@ -50,13 +57,13 @@ public abstract class AAdventure implements IAdventure {
     public void training() {
         System.out.println("ベテランさん「この世界じゃ、自分の身を自分で守る力が必要だ！」");
         System.out.println("ベテランさん「特別に俺が稽古をつけてやる！おもいっきりかかってこい！！」");
-        System.out.println("\n\n\n\n");
+        System.out.println("\n");
         System.out.println("模擬戦闘の開始");
         System.out.println("ベテランヒーローと相棒の鳥が、マツに襲い掛かってきた");
         System.out.println("\n");
 
 
-        AAdventure para ;
+       // AAdventure para ;
         BeginnerHero zibun = new BeginnerHero();
         VeteranHero enemyA = new VeteranHero();
         Bird enemyB = new Bird();
@@ -69,57 +76,160 @@ public abstract class AAdventure implements IAdventure {
             System.out.println("まもる　：３");
             System.out.println("ねげる　：４");
             int sentakusi = new Scanner(System.in).nextInt();
-            if(sentakusi == 1){
-                zibun.attack();
 
-            }else if (sentakusi == 2 ) {
-                zibun.skill();
 
-            }else if (sentakusi == 3) {
-                zibun.guard();
+            //敵のどちらかランダム
+            // 0はベテラン
+            // 1は鳥
+            Random rndA = new Random();
+            int enemy = rndA.nextInt(2);
 
-            }else if (sentakusi == 4) {
-                zibun.run();
-            } else{
-                System.out.println("選択肢エラーは何もしない");
+            System.out.println(enemy);
+            if (enemy==1){  //鳥へ攻撃
+                switch (sentakusi) {
+                    case 1: //攻撃
+                        System.out.println(this.beginnerHero.getName() + "の攻撃！");
+                        System.out.print(this.bird.getName() + "に");
+                        System.out.println(this.beginnerHero.attack() + "のダメージを与えた。");
+
+                        int BefHp = this.bird.getLife();
+                        int AftHp = BefHp - this.beginnerHero.attack();
+                        this.bird.setLife(AftHp);
+                        break;
+
+                    case 2: //スキル
+                        System.out.println("スキルを選択");
+                        System.out.println("全体に" + this.beginnerHero.skill() + "のダメージを与えた。");
+
+                        int BefBirdHp = this.bird.getLife();
+                        int BefVeteranHp = this.veteranHero.getLife();
+                        int AftBirdHp = BefBirdHp - this.beginnerHero.skill();
+                        int AftVeteranHp = BefVeteranHp - this.beginnerHero.skill();
+                        this.bird.setLife(AftBirdHp);
+                        this.veteranHero.setLife(AftVeteranHp);
+
+                        break;
+                    case 3: //守る
+                        System.out.println("守るを選択");
+                        this.beginnerHero.guard();
+                        System.out.println("防御力が" + this.beginnerHero.getDefense() + "にあがった！");
+                        break;
+                    case 4: //逃げる
+                        System.out.println("逃げるを選択");
+                        break;
+                }
+            }else {  //ベテランへ攻撃
+                switch (sentakusi) {
+                    case 1: //攻撃
+                        System.out.println(this.beginnerHero.getName() + "の攻撃！");
+                        System.out.print(this.veteranHero.getName() + "に");
+                        System.out.println(this.beginnerHero.attack() + "のダメージを与えた。");
+
+                        int BefHp = this.veteranHero.getLife();
+                        int AftHp = BefHp - this.beginnerHero.attack();
+                        this.veteranHero.setLife(AftHp);
+
+                        break;
+
+                    case 2: //スキル
+                        System.out.println("スキルを選択");
+                        System.out.println("全体に" + this.beginnerHero.skill() + "のダメージを与えた。");
+
+                        int BefBirdHp = this.bird.getLife();
+                        int BefVeteranHp = this.veteranHero.getLife();
+                        int AftBirdHp = BefBirdHp - this.beginnerHero.skill();
+                        int AftVeteranHp = BefVeteranHp - this.beginnerHero.skill();
+                        this.bird.setLife(AftBirdHp);
+                        this.veteranHero.setLife(AftVeteranHp);
+                        break;
+
+                    case 3: //守る
+                        System.out.println("守るを選択");
+                        System.out.println("防御力が" + this.beginnerHero.guard() + "に上がった。");
+                        break;
+
+                    case 4: //逃げる
+                        System.out.println("逃げるを選択");
+                        break;
+                }
+
             }
-
-
 
             //敵の攻撃　ベテランの行動パターン
             System.out.println("敵のターン！");
-            Random rnd = new Random();
+            Random rndB = new Random();
+            Random rndC = new Random();
 
 
-            int enemy1 = rnd.nextInt(5);
-            int enemy2 = rnd.nextInt(3);
+            int enemy1 = rndB.nextInt(5);
+            int enemy2 = rndC.nextInt(3);
+
 
             //ベテランの行動パターン　enenmy1
-            if(enemy1 == 0){
-                enemyA.attack();
+            //0～5
+            switch (enemy1){
+                case 1: //攻撃
+                    System.out.println(this.veteranHero.getName() + "の攻撃！");
+                    System.out.print(this.beginnerHero.getName() + "に");
+                    System.out.println(this.veteranHero.attack() + "のダメージを与えた。");
 
-            }else if (enemy1 == 1 ) {
-                enemyA.skill();
+                    int BefHp = this.beginnerHero.getLife();
+                    int AftHp = BefHp - this.veteranHero.attack();
+                    this.beginnerHero.setLife(AftHp);
+                    break;
 
-            }else if (enemy1 == 2) {
-                enemyA.guard();
+                case 2: //スキル
+                    System.out.println(this.veteranHero.getName() + "のスキル！");
+                    System.out.println(this.beginnerHero.getName() + "の防御が" + this.veteranHero.skill() + "ダウンした");
 
-            }else if (enemy1 == 3) {
-                enemyA.run();
-            } else{
-                System.out.println("ベテランさんの攻撃！　　マツは素早く避けた！");
+                    int BefGuard = this.beginnerHero.getDefense();
+                    int AftGuard = BefGuard - this.veteranHero.skill();
+                    this.beginnerHero.setLife(AftGuard);
+                    break;
+
+                case 3: //守る
+                    System.out.println("ベテランさんは防御している");
+                    this.veteranHero.guard();
+                    break;
+
+                case 4: //逃げる
+                    System.out.println("");
+                    break;
+
+                default: //何もしない
+                    System.out.println("ベテランさんはボーっとしている");
+                    break;
             }
 
-            //敵の攻撃　カラアゲくんの行動パターン
-            if(enemy2 == 0){
-                enemyB.attack();
 
-            }else if (enemy2 == 1 ) {
-                enemyB.run();
+            //敵の攻撃　鳥の行動パターン　enemy2
+            //0～2
+            switch (enemy2){
+                case 1: //攻撃
+                    System.out.println(this.bird.getName() + "の攻撃！");
+                    System.out.print(this.beginnerHero.getName() + "に");
+                    System.out.println(this.bird.attack() + "のダメージを与えた。");
 
-            }else{
-                System.out.println("餌をほしそうにこちらを眺めている");
+                    int BefHp = this.beginnerHero.getLife();
+                    int AftHp = BefHp - this.bird.attack();
+                    this.beginnerHero.setLife(AftHp);
+                    break;
+
+                case 2: //逃げる
+                    System.out.println("");
+                    break;
+
+                default: //何もしない
+                    System.out.println("鳥は餌を食べている");
+                    break;
             }
+
+
+
+
+            System.out.print("マツHP：" + this.beginnerHero.getLife());
+            System.out.print("ベテランHP：" + this.veteranHero.getLife());
+            System.out.println("鳥HP：" + this.bird.getLife());
 
         }
     }

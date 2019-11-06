@@ -1,25 +1,24 @@
 package domain.service.student645;
 
 public class Hero extends Creature implements IHuman {
-
     @Override
-    public void guard() {
-        return;
+    public int guard() {
+        return 0;
     }
 
     @Override
-    public void skill() {
-        return;
+    public int skill() {
+        return 0;
     }
 
     @Override
-    public void attack() {
-        super.attack();
+    public int attack() {
+        return super.attack();
     }
 
     @Override
-    public void run() {
-        super.run();
+    public int run() {
+        return super.run();
     }
 
     @Override
