@@ -1,9 +1,11 @@
 package domain.service.student645;
 
-public class Hero extends Creature implements IHuman {
+import java.util.Random;
+
+public class Hero extends ACreature implements IHuman {
     @Override
     public int guard() {
-        return 0;
+        return (int) (super.getDefense() * new Random().nextDouble());
     }
 
     @Override

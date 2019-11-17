@@ -1,10 +1,11 @@
 package domain.service.student645;
 
-public class Bird extends Creature {
+public class Bird extends ACreature {
     @Override
     public int attack() {
         int ATK = super.getOffense() ;
-        return ATK;
+        //return ATK;
+        return super.attack();
     }
 
     @Override

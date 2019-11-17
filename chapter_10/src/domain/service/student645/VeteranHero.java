@@ -6,21 +6,19 @@ public class VeteranHero extends Hero {
         int DEF = super.getDefense() + 20;
         super.setDefense(DEF);
 
-        return DEF;
+        return super.guard();
     }
 
     @Override
     public int skill() {
         // ここに独自の処理を書く
-        return super.skill();
+        return Utility.lastDamage * 2;
     }
 
     @Override
     public int attack() {
 
-        int ATK = super.getOffense() ;
-
-        return ATK;
+        return super.attack();
     }
 
     @Override
@@ -28,6 +26,7 @@ public class VeteranHero extends Hero {
         // ここに独自の処理を書く
         return super.run();
     }
+
 
     @Override
     public int getLife() {
@@ -59,3 +58,5 @@ public class VeteranHero extends Hero {
         super.setDefense(defense);
     }
 }
+
+

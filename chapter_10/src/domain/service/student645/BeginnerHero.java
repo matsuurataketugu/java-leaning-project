@@ -15,8 +15,8 @@ public class BeginnerHero extends Hero {
 
     @Override
     public int skill() {
-        //敵の防御無視で全体ダメージ
-       int SKILL = super.getOffense() ;
+        //返り値で防御へらす
+       int SKILL = super.getOffense();
        return SKILL;
     }
 
