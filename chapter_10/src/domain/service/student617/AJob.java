@@ -1,5 +1,8 @@
 package domain.service.student617;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public abstract class AJob implements IJob{
 
     public void story() {
@@ -14,28 +17,65 @@ public abstract class AJob implements IJob{
         return;
 
     }
-    public void meeting(int id) {
 
-        System.out.println("13:30になりました。");
-        System.out.println("HIS様、JTB様、Expedia様お揃いですね。");
-        System.out.println("それでは、3社合同打ち合わせを始めます。");
+    public ATour meeting(TravelAgency id) {
 
-        return;
+        try {
+            String scheduleFromStr;
+            String scheduleToStr;
+            SimpleDateFormat sdf = new
+                    SimpleDateFormat("yyyy/MM/dd");
 
+            switch (id) {
+                case HIS:
+                    scheduleFromStr = "2020/01/01";
+                    scheduleToStr = "2020/01/05";
+                    return new HisTour(
+                            1,
+                            "アジア",
+                            "日本",
+                            "沖縄",
+                            sdf.parse(scheduleFromStr),
+                            sdf.parse(scheduleToStr),
+                            4
+                    );
+
+                case JTB:
+                    scheduleFromStr = "2020/08/10";
+                    scheduleToStr = "2020/08/30";
+                    return new JtbTour(
+                            2,
+                            "ヨーロッパ",
+                            "スペイン",
+                            "バルセロナ",
+                            sdf.parse(scheduleFromStr),
+                            sdf.parse(scheduleToStr),
+                            10
+                    );
+
+                case Expedia:
+                    scheduleFromStr = "2020/12/20";
+                    scheduleToStr = "2020/12/25";
+                    return new ExpediaTour(
+                            3,
+                            "北米",
+                            "アメリカ",
+                            "ロサンゼルス",
+                            sdf.parse(scheduleFromStr),
+                            sdf.parse(scheduleToStr),
+                            2
+                    );
+
+            }
+        } catch (ParseException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return null;
     }
-    public void confirm(int id) {
-
-        System.out.println("HIS社は思い切りハワイの自然を楽しむツアー内容ですね。");
-        System.out.println("早朝のハイキングからダイビング、バナナボート、ナイトサファリまで自然満喫ですね！");
-        System.out.println("JTB社は思い切り買い物を楽しむツアー内容ですね。");
-        System.out.println("免税店、アウトレットと日本では高いものを海外で安くゲットしようというものですね！");
-        System.out.println("Expedia社はインスタ映えスポット巡りの内容ですね。");
-        System.out.println("ウォールアート、ハワイの美味しい可愛い食べ物屋さんを巡るというものですね！");
-
-        return;
-
-    }
-
-}
+       public void confirm(ATour tour){
+         System.out.println(tour.toString());
 
 
+           }
+       }

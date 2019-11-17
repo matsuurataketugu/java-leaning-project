@@ -56,6 +56,11 @@ public class MainController {
 
                 break;
             case 617:
+
+                domain.service.student617.ITask
+                task617 = new domain.service.student617.MyTask();
+                task617.run();
+
                 break;
             case 645:
                 break;
