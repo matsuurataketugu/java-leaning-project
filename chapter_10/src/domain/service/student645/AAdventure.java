@@ -14,23 +14,23 @@ public abstract class AAdventure implements IAdventure {
 
         this.beginnerHero = new BeginnerHero();
         this.beginnerHero.setName("マツ");
-        this.beginnerHero.setLife(1200);
-        this.beginnerHero.setMana(50);
+        this.beginnerHero.setLife(1000);
+        this.beginnerHero.setMana(100);
         this.beginnerHero.setOffense(100);
-        this.beginnerHero.setDefense(60);
+        this.beginnerHero.setDefense(50);
 
         this.veteranHero = new VeteranHero();
         this.veteranHero.setName("ベテランさん");
-        this.veteranHero.setLife(2000);
+        this.veteranHero.setLife(1000);
         this.veteranHero.setMana(100);
-        this.veteranHero.setOffense(120);
-        this.veteranHero.setDefense(30);
+        this.veteranHero.setOffense(100);
+        this.veteranHero.setDefense(50);
 
         this.bird = new Bird();
         this.bird.setName("相棒の鳥");
-        this.bird.setLife(5000);
+        this.bird.setLife(500);
         this.bird.setMana(50);
-        this.bird.setOffense(20);
+        this.bird.setOffense(70);
         this.bird.setDefense(10);
     }
 

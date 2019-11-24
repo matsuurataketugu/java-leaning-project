@@ -7,7 +7,7 @@ public class BeginnerHero extends Hero {
     @Override
     public int guard() {
         //防御を高める
-      int DEF = super.getDefense() + 20;
+      int DEF = super.getDefense() + 50;
       super.setDefense(DEF);
 
       return DEF;
