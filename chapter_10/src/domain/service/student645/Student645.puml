@@ -11,6 +11,7 @@ interface IAdventure {
     +void story()
     +void training()
 }
+
 abstract class AAdventure {
 }
 class MyAdventure {
