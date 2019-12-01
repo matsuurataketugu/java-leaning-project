@@ -50,7 +50,7 @@ public class MyTask implements ITask{
         System.out.println("渡邉:前回、美味しいパエリアが食べたいとおっしゃっていたので。");
         System.out.println("J担:。でも、これだと高こうならへん？そや、日程を短くして格安ツアーを売りにしてーな。");
         System.out.println("渡邉:・・・招致しました。検討してみますので、少々お待ちください。");
-        tour.setScheduleTo("2020/08/20");
+        tour.setScheduleTo(StringToDate("2020/08/20"));
         tour.hearing();
         myJob.confirm(tour);
         System.out.println();
@@ -79,8 +79,8 @@ public class MyTask implements ITask{
         tour.setArea("北米");
         tour.setCountry("アメリカ");
         tour.setMainSpot("ニューヨーク");
-        tour.setScheduleFrom("2020/12/24");
-        tour.setScheduleTo("2021/01/03");
+        tour.setScheduleFrom(StringToDate("2020/12/24"));
+        tour.setScheduleTo(StringToDate("2021/01/03"));
         tour.setUserCount(4);
         tour.hearing();
         System.out.println();
@@ -88,6 +88,7 @@ public class MyTask implements ITask{
         System.out.println("渡邉:ありがとうございます！。");
         System.out.println();
         System.out.println("～Fin.～");
+    }
 
         private Date StringToDate(String strDate){
             try{

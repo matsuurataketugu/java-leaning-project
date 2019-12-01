@@ -47,7 +47,7 @@ public abstract class ATour {
         return country;
     }
 
-    public String setCountry(String country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
