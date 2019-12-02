@@ -15,7 +15,6 @@ public class MyTask implements ITask{
         ATour tour;
 
         //HIS
-
         System.out.println("受付:HISの担当者がいらっしゃいました。");
         System.out.println("H担:お世話になっております。");
         System.out.println("渡邉:お待ちしておりました。");
@@ -39,7 +38,6 @@ public class MyTask implements ITask{
         lnterlude();
 
         //JTB
-
         System.out.println("受付:JTBの担当者がいらっしゃいました。");
         System.out.println("J担:おおきに～儲かってまっか？");
         System.out.println("渡邉:お待ちしておりました。");
@@ -61,8 +59,7 @@ public class MyTask implements ITask{
 
         lnterlude();
 
-        //Expesia
-
+        //Expedia
         System.out.println("受付:Expediaの担当者がいらっしゃいました。");
         System.out.println("E担:お世話様です。");
         System.out.println("渡邉:お待ちしておりました。");

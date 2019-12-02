@@ -19,12 +19,12 @@ public abstract class ATour {
                  Date scheduleFrom,
                  Date scheduleTo,
                  int userCount) {
-        this.id = id;
-        this.area = area;
-        this.country = country;
-        this.scheduleFrom = scheduleFrom;
-        this.scheduleTo = scheduleTo;
-        this.userCount = userCount;
+         this.id = id;
+         this.area = area;
+         this.country = country;
+         this.scheduleFrom = scheduleFrom;
+         this.scheduleTo = scheduleTo;
+         this.userCount = userCount;
     }
 
     public int getId() {
