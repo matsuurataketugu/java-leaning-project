@@ -11,8 +11,9 @@ public class Task645 implements ITask {
         // 次のようなプログラムを作成・実行し、実行時エラーを発生させよ
         // １． String型変数sを宣言し、nullを代入する
         String s = null;
-        System.out.print(s.length());
+
         // ２． s.length()の内容を表示しようとする
+        // System.out.print(s.length());
 
     }
 
@@ -29,10 +30,10 @@ public class Task645 implements ITask {
             String s = null;
             System.out.print(s.length());
         } catch(NullPointerException error){
-            System.out.print("NullPointerException例外をcatchしました。");
-            System.out.print("－－スタックトレース（ここから）－－");
-            System.out.print("スタックトレースを表示する");
-            System.out.print("－－スタックトレース（ここまで）--");
+            System.out.println("NullPointerException例外をcatchしました。");
+            System.out.println("－－スタックトレース（ここから）－－");
+            System.out.println("スタックトレースを表示する");
+            System.out.println("－－スタックトレース（ここまで）--");
 
         }
 
