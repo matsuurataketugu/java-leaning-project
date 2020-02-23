@@ -2,6 +2,8 @@ package domain.service.student645;
 
 import domain.service.ITask;
 
+import java.io.IOException;
+
 public class Task645 implements ITask {
 
 
@@ -29,7 +31,7 @@ public class Task645 implements ITask {
         try{
             String s = null;
             System.out.print(s.length());
-        } catch(NullPointerException error){
+        } catch(NullPointerException error2){
             System.out.println("NullPointerException例外をcatchしました。");
             System.out.println("－－スタックトレース（ここから）－－");
             System.out.println("スタックトレースを表示する");
@@ -43,8 +45,18 @@ public class Task645 implements ITask {
     public void task3() {
         // 問３
         // Integer.parseInt()メソッドを実行し、文字列"三"の変換結果をint型変数に代入するコードを記述せよ
+        String sanbanme = "三";
+        //System.out.println(Integer.parseInt(sanbanme));
+
+
         // その際に、parseInt()メソッドがどのような例外を発生させる可能性があるかをAPIリファレンスで調べ、
         // 正しく例外処理を記述せよ
+        try {
+            Integer.parseInt(sanbanme);
+        }catch(NumberFormatException error3){
+            System.out.println("NumberFormatException例外をcatchしました。");
+
+        }
 
     }
 
@@ -52,6 +64,10 @@ public class Task645 implements ITask {
     public void task4() {
         // 問４
         // メソッド実施直後にIOExceptionを発生させて異常終了するようなプログラムを作成せよ
-
+        try {
+            throw new IOException();
+        } catch (IOException error4){
+            System.out.println("異常終了");
+        }
     }
 }

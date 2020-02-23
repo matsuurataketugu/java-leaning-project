@@ -1,5 +1,7 @@
 package domain.service;
 
+import java.io.IOException;
+
 /**
  * 課題インターフェース
  *
