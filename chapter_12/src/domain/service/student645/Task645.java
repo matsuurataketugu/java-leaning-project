@@ -5,12 +5,9 @@ import domain.service.ITask;
 public class Task645 implements ITask {
     @Override
     public void task1() {
-        // 問１
-        // 以下の仕様に従った金庫をStrongBoxクラスとして定義せよ
-        // ・金庫クラスに格納するインスタンスの型は開発時には未定である
-        // ・金庫には、１つのインスタンスを保存できる必要がある
-        // ・put()でインスタンスを保存し、get()でインスタンスを取得できる
-        // ・get()で取得する際、キャストを使わなくても格納前の型に代入できる
+        StrongBox<Integer> box = new StrongBox<>();
+        box.put(100);
+        System.out.print(box.get());
 
     }
 
