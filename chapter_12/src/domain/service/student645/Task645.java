@@ -13,6 +13,7 @@ public class Task645 implements ITask {
 
     @Override
     public void task2() {
+
         // 問2
         // 以下の仕様に従ったクラスたちを定義せよ
         // ・面積を計算するクラスをAreaCalculationクラスとして定義せよ
