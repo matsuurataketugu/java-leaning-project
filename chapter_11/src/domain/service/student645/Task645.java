@@ -15,7 +15,7 @@ public class Task645 implements ITask {
         String s = null;
 
         // ２． s.length()の内容を表示しようとする
-        // System.out.print(s.length());
+         System.out.print(s.length());
 
     }
 
