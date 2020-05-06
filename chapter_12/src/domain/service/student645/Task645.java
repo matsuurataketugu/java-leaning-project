@@ -16,14 +16,21 @@ public class Task645 implements ITask {
     @Override
     public void task2() {
         AreaCalculation enzan = new AreaCalculation();
-        System.out.println("円の面積を計算します。");
+
         System.out.println("半径を入力してください。");
-        Scanner hakei = new Scanner(System.in);
+        double hankei = new Scanner(System.in).nextInt();
 
         System.out.println("どちらクラスで計算しますか？");
         System.out.println("ゆとりくんクラス  ; 1");
         System.out.println("脱ゆとりさんクラス: 2");
-        Scanner patterm = new Scanner(System.in);
+        int patterm = new Scanner(System.in).nextInt();
+        if(patterm == 1){
+            ExitYutoriSan datuyutori = new ExitYutoriSan();
+            datuyutori.study();
+        }else{
+            YutoriKun yutori = new YutoriKun();
+            yutori.study();
+        }
 
         //enzan.CircleArea();
 
