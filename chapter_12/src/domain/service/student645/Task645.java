@@ -13,6 +13,9 @@ public class Task645 implements ITask {
 
     @Override
     public void task2() {
+        AreaCalculation enzan = new AreaCalculation();
+
+        enzan.CircleArea();
 
         // 問2
         // 以下の仕様に従ったクラスたちを定義せよ

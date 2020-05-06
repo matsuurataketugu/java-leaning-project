@@ -1,11 +1,15 @@
 package domain.service.student645;
 
 //面積を計算するクラスをAreaCalculationクラス
-public class AreaCalculation<A> {
+public class AreaCalculation {
 
 
     //円の面積を求めるCalcCircleAreaメソッド
-    private void CircleArea(int ha,int en){
+    public void CircleArea(double ha,double en){
+        double ans = 0;
+        ans = ha * ha * en ;
+
+
 
         // ・円の面積を求めるメソッドは引数に半径、円周率を持つ
         // ・円周率は３．１４と３のどちらも扱えるようにしておき、最適な型を割り当てることが出来るものとする
