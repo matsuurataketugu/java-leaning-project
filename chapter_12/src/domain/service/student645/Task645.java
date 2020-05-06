@@ -2,6 +2,8 @@ package domain.service.student645;
 
 import domain.service.ITask;
 
+import java.util.Scanner;
+
 public class Task645 implements ITask {
     @Override
     public void task1() {
@@ -14,8 +16,16 @@ public class Task645 implements ITask {
     @Override
     public void task2() {
         AreaCalculation enzan = new AreaCalculation();
+        System.out.println("円の面積を計算します。");
+        System.out.println("半径を入力してください。");
+        Scanner hakei = new Scanner(System.in);
 
-        enzan.CircleArea();
+        System.out.println("どちらクラスで計算しますか？");
+        System.out.println("ゆとりくんクラス  ; 1");
+        System.out.println("脱ゆとりさんクラス: 2");
+        Scanner patterm = new Scanner(System.in);
+
+        //enzan.CircleArea();
 
         // 問2
         // 以下の仕様に従ったクラスたちを定義せよ
