@@ -5,15 +5,14 @@ public class AreaCalculation<A> {
 
 
     //円の面積を求めるCalcCircleAreaメソッド
-    private void CalcCircleArea(){
+    private void CircleArea(int ha,int en){
 
-
-
+        // ・円の面積を求めるメソッドは引数に半径、円周率を持つ
         // ・円周率は３．１４と３のどちらも扱えるようにしておき、最適な型を割り当てることが出来るものとする
         // ・勉強メソッドを実行するとAreaCalculationクラスから円の面積を求めるものとする。
         // ・ゆとりくんクラス（YutoriKun）が勉強メソッドを実行すると半径は任意の値、円周率は３で計算される。
         // ・脱ゆとりさんクラス（ExitYutoriSan）が勉強メソッドを実行すると半径は任意の値、円周率は３。１４で計算される。
-
     }
+
 
 }
