@@ -24,7 +24,7 @@ public class Task645 implements ITask {
         System.out.println("ゆとりくんクラス  ; 1");
         System.out.println("脱ゆとりさんクラス: 2");
         int patterm = new Scanner(System.in).nextInt();
-        if(patterm == 1){
+        if(patterm == 2){
             ExitYutoriSan datuyutori = new ExitYutoriSan();
             datuyutori.study();
         }else{

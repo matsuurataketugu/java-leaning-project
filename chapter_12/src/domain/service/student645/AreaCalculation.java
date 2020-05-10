@@ -8,6 +8,8 @@ public class AreaCalculation {
     public void CircleArea(double ha,double en){
         double ans = 0;
         ans = ha * ha * en ;
+        //問２はやらんでいいやつやった。。。
+
 
 
 
