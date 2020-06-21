@@ -17,7 +17,6 @@ public class Task645 implements ITask {
 
         String moziA = "^A[0-9]{1,2}$'";
         Pattern pat = Pattern.compile(moziA);
-
         if (pat.matcher(s).find()) {
             return true;
         }
