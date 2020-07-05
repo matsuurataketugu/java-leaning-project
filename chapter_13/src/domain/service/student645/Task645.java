@@ -15,7 +15,7 @@ public class Task645 implements ITask {
     @Override
     public boolean task2(String s) {
 
-        String moziA = "^A[0-9]{1,2}$'";
+        String moziA = "^A[0-9]{1,2}$";
         Pattern pat = Pattern.compile(moziA);
         if (pat.matcher(s).find()) {
             return true;
@@ -26,7 +26,7 @@ public class Task645 implements ITask {
     @Override
     public boolean task3(String s) {
 
-            String moziB = "^U[A-Z]{3}$'";
+            String moziB = "^U[A-Z]{3}";
             Pattern patB = Pattern.compile(moziB);
             if (patB.matcher(s).find()) {
                 return true;
